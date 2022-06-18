@@ -191,11 +191,7 @@ const Navbar = () => {
           <section className="col-6 col-md-2 d-flex justify-content-md-center">
             <section className={styles.logo_container}>
               <Link href={"/"} passHref>
-                <img
-                  width={"150px"}
-                  src="https://agumentik-software.vercel.app/images/logo.png"
-                  alt="logo"
-                />
+                <img width={"150px"} src="/images/main-logo.png" alt="logo" />
               </Link>
             </section>
           </section>

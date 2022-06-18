@@ -22,11 +22,11 @@ export default class Footer extends Component {
         },
         {
           name: "Project",
-          link: "#",
+          link: "/project",
         },
         {
           name: "Services",
-          link: "#",
+          link: "/service",
         },
         {
           name: "Team",
@@ -34,7 +34,7 @@ export default class Footer extends Component {
         },
         {
           name: "Contact",
-          link: "#",
+          link: "/contact",
         },
       ],
 
