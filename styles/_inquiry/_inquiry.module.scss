@@ -1,0 +1,28 @@
+@import "../function";
+
+.top {
+  @include flex(center, center);
+  @include title;
+  @include heading;
+  @include design;
+  text-align: center;
+  flex-direction: column;
+
+  li {
+    margin-top: 1rem;
+  }
+}
+
+.cards {
+  display: grid;
+  margin-top: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  place-items: center;
+
+  @include media("<=993px") {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 0rem;
+    grid-row-gap: 2rem;
+  }
+}

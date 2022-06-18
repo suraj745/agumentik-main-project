@@ -1,0 +1,71 @@
+@import "../function";
+
+.blog_content {
+  @include title;
+  @include heading;
+  @include design;
+  text-align: center;
+}
+
+.blog_card {
+  border: 0.1rem solid rgba(192, 192, 192, 0.276);
+
+  @include media("<=996px") {
+    max-width: 40rem;
+  }
+  .banner {
+    position: relative;
+    max-width: 40rem;
+    img {
+      width: 100%;
+    }
+    .tag {
+      background-color: #e4045e;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 0.5rem;
+      position: absolute;
+      right: 0.5rem;
+      bottom: -3rem;
+      color: white;
+    }
+  }
+}
+
+.grid_card {
+  @include flex(center, center);
+  column-gap: 3rem;
+  @include media("<=996px") {
+    flex-wrap: wrap;
+
+    .blogcard3 {
+      place-content: center;
+    }
+  }
+}
+
+.main_content {
+  padding: 3rem;
+  max-width: 40rem;
+  line-height: 2.2rem;
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $black-color;
+  }
+
+  .buttons {
+    @include default_button;
+  }
+}
+
+.status {
+  @include flex(flex-start, center);
+  column-gap: 2rem;
+  font-size: 1.3rem;
+  div {
+    @include flex(center, center);
+  }
+}

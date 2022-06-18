@@ -1,0 +1,65 @@
+@import "../../../function";
+
+.team_card {
+  padding: 0;
+  text-align: left;
+
+  max-width: 45rem;
+  .image {
+    position: relative;
+    img {
+      width: 60%;
+
+      @include media("<=phone") {
+        width: 100%;
+      }
+    }
+
+    .main_image {
+      filter: drop-shadow(10px 5px 5px rgba(192, 192, 192, 0.356));
+    }
+  }
+
+  .bottom {
+    @include media(">=laptop") {
+      border-left: 0.1rem solid silver;
+    }
+    padding: 0;
+    padding-top: 4rem;
+
+    ul {
+      padding: 0;
+      padding: 1rem;
+    }
+  }
+  .heading {
+    h1 {
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  }
+
+  .paragraph {
+    p {
+      color: rgb(135, 135, 135);
+    }
+  }
+
+  .button {
+    button {
+      outline: none;
+      background: none;
+      border: none;
+      text-transform: uppercase;
+      color: $main-color;
+      font-weight: 600;
+      border-bottom: 0.2rem solid $main-color;
+      padding: 0.2rem 0.6rem;
+      transition: $transition;
+      &:hover {
+        background-color: $main-color;
+        color: white;
+      }
+    }
+  }
+}

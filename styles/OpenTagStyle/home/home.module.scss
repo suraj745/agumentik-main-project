@@ -1,0 +1,166 @@
+@import "../../function";
+
+.left_content {
+  // blue
+  // color: white;
+
+  // margin-top: 8rem;
+
+  @include media("<=laptop") {
+    text-align: center;
+  }
+
+  li {
+    margin-top: 2rem;
+  }
+  .blue {
+    color: $main-color;
+    p {
+      column-gap: 0.5rem;
+      @include flex(flex-start, center);
+      text-transform: uppercase;
+      @include media("<=laptop") {
+        @include flex(center, center);
+      }
+    }
+    .line {
+      display: inline-block;
+      width: 20rem;
+      height: 0.1rem;
+      @include media("<=phone") {
+        width: 14rem;
+      }
+      background-color: $main-color;
+    }
+  }
+
+  //   heading
+
+  .heading {
+    font-size: 7.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+
+    @include media("<=desktop") {
+      font-size: 5rem;
+
+      @include media("<=laptop") {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
+  .paragraph {
+    word-spacing: 0.8rem;
+    font-size: 1.8rem;
+    color: white;
+
+    @include media("<=desktop") {
+      font-size: 1.6rem;
+
+      @include media("<=laptop") {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .button {
+    text-transform: uppercase;
+    color: white;
+    padding: 1rem 1rem 1rem 6rem;
+    border: 0.1rem solid $main-color;
+    position: relative;
+    background-color: transparent;
+    transition: 0.6s;
+    z-index: 1;
+
+    &:hover::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    &:before {
+      content: "→";
+      width: 100%;
+      color: white;
+      font-size: 4rem;
+      transition: 0.6s;
+      height: 100%;
+      @include flex(flex-start, center);
+      position: absolute;
+      background-color: $main-color;
+      top: 0rem;
+      left: 0rem;
+      z-index: -1;
+      clip-path: polygon(0 0, 14% 1%, 29% 100%, 0% 100%);
+    }
+  }
+}
+
+.social {
+  position: absolute;
+
+  bottom: -2%;
+  right: 10%;
+  color: white;
+  @include flex(center, center);
+  column-gap: 0.5rem;
+
+  @include media("<=desktop") {
+    right: 6%;
+    @include media("<=laptop") {
+      bottom: -9%;
+      @include media("<=tablet") {
+        right: 4%;
+        bottom: -10%;
+
+        @include media("<=phone") {
+          top: -9.5rem;
+          right: 0rem;
+          column-gap: 0.1rem;
+        }
+      }
+    }
+  }
+
+  .icon {
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 100%;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-left: 2rem;
+    @include media("<=tablet") {
+      margin-left: 0.5rem;
+    }
+    align-items: center;
+    background-color: rgb(74, 74, 74);
+  }
+  .line {
+    display: block;
+    width: 8rem;
+    height: 0.1rem;
+    @include media("<=phone") {
+      display: none;
+    }
+    @include media("<=tablet") {
+      width: 4rem;
+      @include media("<=phone") {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+    background-color: rgb(74, 74, 74);
+  }
+
+  p {
+    color: rgb(74, 74, 74);
+    @include media("<=tablet") {
+      font-size: 1.2rem;
+    }
+    @include media("<=phone") {
+      display: none;
+    }
+  }
+}

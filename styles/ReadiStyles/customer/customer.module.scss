@@ -1,0 +1,38 @@
+@import "../../function";
+
+.customer_container {
+  .top {
+    li {
+      margin-top: 2rem;
+    }
+    text-align: center;
+    .heading {
+      h1 {
+        font-size: clamp(3rem, 4vw, 7rem);
+        color: black;
+      }
+    }
+  }
+
+  .paragraph {
+    p {
+      font-family: "Montserrat Alternates", sans-serif;
+    }
+  }
+  .company_grid {
+    @include flex(center, center);
+
+    section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      place-items: center;
+      gap: 1rem;
+      @include media("<=phone") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

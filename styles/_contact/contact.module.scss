@@ -1,0 +1,7 @@
+@import "../function";
+
+.contact_content {
+  @include heading;
+  @include default_button;
+  margin-top: 2rem;
+}

@@ -1,0 +1,125 @@
+@import "../function";
+
+.modal_container {
+  padding: 6rem 3rem 4rem 3rem;
+  width: 45rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  background-color: white;
+
+  @include media("<=tablet") {
+    width: 100vw;
+  }
+
+  ul {
+    margin-top: 2rem;
+    li {
+      margin-top: 1rem;
+    }
+  }
+
+  .heading {
+    h1 {
+      font-size: 2.4rem;
+      color: $black-color;
+    }
+  }
+
+  .about_section {
+    .cross {
+      @include flex(flex-end, center);
+      transition: $transition;
+
+      &:hover {
+        color: $black-color;
+      }
+    }
+  }
+
+  .insta_section {
+    .grid_images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      width: 100%;
+      place-items: center;
+      // @include media("<=tablet") {
+      //   grid-template-columns: repeat(4, 16rem);
+
+      //   @include media("<=phone") {
+      //     grid-template-columns: repeat(4, 8rem);
+      //   }
+      // }
+
+      span {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+
+        &:hover::after {
+          opacity: 1;
+        }
+        &::after {
+          content: " ";
+          position: absolute;
+          width: 100%;
+          transition: $transition;
+          height: 100%;
+          left: 0px;
+          top: -2px;
+          background-color: rgba(0, 0, 0, 0.525);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .contact_section {
+    text-align: center;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    & :nth-child(1) {
+      h1 {
+        color: $main-color;
+
+        &:hover {
+          color: $black-color;
+        }
+      }
+    }
+
+    & :nth-child(3) {
+      h1 {
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+
+    .icons {
+      column-gap: 0.5rem;
+      @include flex(center, center);
+      span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 100%;
+        border: 0.1rem solid $paragraph-color;
+        transition: $transition;
+        &:hover {
+          color: white;
+          background-color: $main-color;
+          border: 0.1rem solid $main-color;
+        }
+      }
+    }
+  }
+}

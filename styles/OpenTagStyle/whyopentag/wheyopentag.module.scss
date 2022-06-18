@@ -1,0 +1,72 @@
+@import "../../function";
+
+.right_content {
+  padding: 0;
+  color: white;
+  li {
+    margin-top: 2rem;
+  }
+  .heading {
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3rem);
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+  }
+
+  .button {
+    button {
+      color: white;
+      text-transform: uppercase;
+      background: none;
+      transition: 0.6s;
+      border: none;
+      outline: none;
+      padding: 1rem;
+      border-bottom: 0.2rem solid transparent;
+      &:hover {
+        border-bottom: 0.2rem solid $main-color;
+      }
+    }
+  }
+}
+
+.dot1 {
+  position: absolute;
+  width: 40%;
+  left: -5%;
+  top: -5%;
+  z-index: -1;
+  @include media("<=1400px") {
+    left: -3%;
+    top: 2%;
+    @include media("<=desktop") {
+      top: 8%;
+      @include media("<=laptop") {
+        display: none;
+      }
+    }
+  }
+}
+
+.dot2 {
+  position: absolute;
+  width: 40%;
+  bottom: -5%;
+  right: 1%;
+  z-index: -1;
+  @include media("<=1400px") {
+    right: -4%;
+    bottom: 2%;
+    @include media("<=desktop") {
+      bottom: 9%;
+      @include media("<=laptop") {
+        bottom: -10%;
+
+        @include media("<=tablet") {
+          display: none;
+        }
+      }
+    }
+  }
+}

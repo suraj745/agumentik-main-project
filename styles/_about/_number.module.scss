@@ -1,0 +1,35 @@
+@import "../function";
+
+.numbers {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  column-gap: 20rem;
+  @include media("<=445px") {
+    column-gap: 10rem;
+
+    @include media("<=400px") {
+      column-gap: 0rem;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+  h1 {
+    font-size: 3.5rem;
+
+    @include media("<=1200px") {
+      font-size: 3rem;
+    }
+    font-weight: 700;
+    color: $black-color;
+
+    & :nth-child(2) {
+      color: #ff724e;
+    }
+  }
+
+  p {
+    font-weight: 500;
+  }
+}

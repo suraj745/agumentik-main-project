@@ -1,0 +1,44 @@
+@import "../function";
+
+.drop_container {
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+
+  &:hover .drop_list {
+    transform: translateY(1rem);
+
+    li {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .name {
+    padding: 1.9rem 0rem 0.8rem 0rem;
+
+    a {
+      color: $black-color;
+    }
+  }
+
+  .drop_list {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    list-style: none;
+    position: absolute;
+    transition: $transition;
+    width: 23rem;
+    min-width: 16rem;
+    font-weight: 500;
+    transform: translateY(10rem);
+    z-index: 100;
+    background-color: white;
+    li {
+      padding: 0.8rem;
+      &:hover {
+        color: $main-color;
+      }
+      display: none;
+    }
+  }
+}

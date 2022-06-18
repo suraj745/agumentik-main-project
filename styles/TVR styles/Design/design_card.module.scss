@@ -1,0 +1,31 @@
+@import "../../function";
+
+.design_Card {
+  text-align: center;
+  display: inline-block;
+  color: white;
+
+  .design_icon {
+    display: inline-flex;
+    padding: 1rem;
+    border-radius: 100%;
+    background-image: linear-gradient(rgb(254, 40, 40), rgba(255, 0, 0, 0.247));
+    @include media("<=phone") {
+      padding: 0.2rem;
+    }
+  }
+
+  .number {
+    h1 {
+      color: red;
+      font-size: clamp(2rem, 2vw, 5rem);
+    }
+  }
+
+  .heading {
+    p {
+      text-transform: capitalize;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+    }
+  }
+}

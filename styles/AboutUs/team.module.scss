@@ -1,0 +1,8 @@
+@import "../function";
+
+.team_top_content {
+  text-align: center;
+  @include title;
+  @include heading;
+  @include design;
+}

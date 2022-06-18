@@ -1,0 +1,84 @@
+@import "../function";
+
+.nav_container {
+  height: 8.4rem;
+  @include flex(center, center);
+  padding: 1.5rem 0rem 1.5rem 0rem;
+
+  section {
+    height: 100%;
+    @include flex(center, center);
+  }
+  .logo {
+    flex: 1;
+  }
+
+  // menus
+  .menus {
+    flex: 2;
+    color: $black-color;
+    @include flex(center, center);
+
+    a {
+      font-weight: 500;
+      padding: 1.5rem;
+      @include media("<=1200") {
+        padding: 0.3rem;
+      }
+    }
+
+    @include media("<tablet") {
+      display: none;
+    }
+  }
+
+  // hamburger
+  .hamburgers {
+    flex: 1;
+
+    @include flex(center, center);
+
+    .first_section {
+      @include flex(space-between, center);
+      div {
+        padding: 1.5rem;
+      }
+
+      .search {
+        margin-top: 1.2rem;
+      }
+
+      // hamburger
+      .hamburger {
+        @include flex(center, flex-end);
+        flex-direction: column;
+
+        &:hover :nth-child(3) {
+          width: 3.5rem;
+        }
+        span {
+          display: block;
+          width: 3.5rem;
+          height: 0.3rem;
+          background-color: #5b5b98;
+          margin-top: 0.5rem;
+          transition: $transition;
+        }
+
+        & :nth-child(3) {
+          width: 1.5rem;
+        }
+      }
+    }
+
+    .anim_hamburger {
+      margin-top: 2rem;
+      width: 4.8rem;
+      height: 4.8rem;
+      display: none;
+      @include media("<tablet") {
+        display: block;
+      }
+    }
+  }
+}

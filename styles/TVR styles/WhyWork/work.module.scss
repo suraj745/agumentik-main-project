@@ -1,0 +1,40 @@
+@import "../../function";
+
+.work_black_container {
+  @include flex(center, center);
+  min-height: 60vh;
+  background-color: black;
+  color: white;
+
+  .top_content {
+    text-align: center;
+    li {
+      margin-top: 2rem;
+    }
+    .heading {
+      h1 {
+        font-size: clamp(3rem, 5vw, 5rem);
+      }
+    }
+
+    .paragraph {
+      p {
+        word-spacing: 0.2rem;
+      }
+    }
+  }
+}
+
+.work_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 2rem;
+  @include media("<=laptop") {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include media("<=phone") {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

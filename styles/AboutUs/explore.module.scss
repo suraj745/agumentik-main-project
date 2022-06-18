@@ -1,0 +1,26 @@
+@import "../function";
+
+.top_content {
+  @include heading;
+  @include design;
+  @include title;
+  text-align: center;
+}
+
+.card_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 1rem;
+
+  @include media("<=990px") {
+    grid-template-columns: repeat(3, 1fr);
+    @include media("<=768px") {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include media("<=576px") {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

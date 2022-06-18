@@ -1,0 +1,67 @@
+@import "../function";
+
+.input {
+  @include flex(center, center);
+  background-color: white;
+  border-radius: 1rem;
+
+  input {
+    outline: none;
+    border: none;
+    width: 40rem;
+    padding: 0.8rem;
+    text-indent: 2rem;
+    background-color: white;
+
+    @include media("<=1206px") {
+      width: 30rem;
+
+      @include media("<=968px") {
+        width: 20rem;
+
+        @include media("<=728px") {
+          max-width: 40rem;
+        }
+      }
+    }
+  }
+
+  .default {
+    border: none;
+    outline: none;
+    padding: 0.8rem;
+    background-color: $main-color;
+    font-size: 1.6rem;
+    max-width: 16rem;
+    height: 5rem;
+    font-weight: 500;
+    border-radius: 1rem;
+    color: white;
+    @include media("<=360px") {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.container {
+  background-color: #f6f5fb;
+  min-height: 20rem;
+
+  @include flex(center, center);
+
+  .heading {
+    font-size: 2.4rem;
+    color: $black-color;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
+@include media("<=768px") {
+  .left {
+    text-align: center;
+  }
+}

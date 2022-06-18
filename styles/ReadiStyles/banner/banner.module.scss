@@ -1,0 +1,141 @@
+@import "../../function";
+
+.banner_container {
+  @include flex(center, center);
+  min-height: 90vh;
+  @include readifont;
+
+  background-color: rgba(192, 192, 192, 0.142);
+  .banner_content {
+    @include media("<=phone") {
+      text-align: center;
+    }
+    .heading {
+      h1 {
+        font-family: "Roboto", sans-serif;
+        text-transform: uppercase;
+        color: silver;
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        .small {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .red_title {
+      h1 {
+        color: $main-color;
+        font-family: "Orbitron", sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+      }
+    }
+    .heading2 {
+      h1 {
+        font-family: "Orbitron", sans-serif;
+        font-size: clamp(3rem, 4vw, 7rem);
+      }
+    }
+
+    .button {
+      @include readi_button;
+    }
+  }
+}
+
+.image_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto, auto);
+  grid-template-areas: ".  ai" ". ai" "robot ai" "girl girl";
+  gap: 2rem;
+  @include media("<=laptop") {
+    padding-right: 10%;
+  }
+  img {
+    width: 100%;
+  }
+
+  & :nth-child(1) {
+    grid-area: girl;
+    width: 40%;
+    justify-self: center;
+  }
+
+  & :nth-child(2) {
+    grid-area: robot;
+    width: 60%;
+    justify-self: flex-end;
+  }
+
+  & :nth-child(3) {
+    grid-area: ai;
+    width: 100%;
+  }
+}
+
+.videoButton {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+
+  @include media("<=phone") {
+    writing-mode: horizontal-tb;
+  }
+  @include flex(center, center);
+  padding-block-start: 4rem;
+
+  p {
+    @include flex(center, center);
+  }
+  .line {
+    width: 0.1rem;
+    height: 10rem;
+
+    @include media("<=phone") {
+      height: 0.1rem;
+      width: 10rem;
+    }
+    background-color: silver;
+    display: inline-block;
+  }
+}
+
+.social_icon {
+  @include flex(flex-start, center);
+
+  @include media("<=laptop") {
+    @include flex(center, center);
+    padding-block-start: 2rem;
+  }
+  li {
+    @include flex(flex-start, center);
+    margin-left: 10%;
+
+    gap: 1rem;
+
+    p {
+      display: inline-block;
+    }
+
+    .main_icon {
+      display: inline-flex;
+      width: 3rem;
+      height: 3rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%;
+      outline: 0.1px solid black;
+      &:hover {
+        background-color: $main-color;
+        color: white;
+        outline: $main-color;
+      }
+    }
+  }
+
+  .line {
+    display: inline-block;
+    width: 10rem;
+    height: 0.1rem;
+    background-color: silver;
+  }
+}

@@ -1,0 +1,1004 @@
+@import "./function";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  body {
+    font-size: $font-size;
+    font-family: $main-font-family;
+    color: $paragraph-color;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.service_list {
+  position: relative;
+  width: 100%;
+
+  &:hover .sub_dropdown {
+    display: initial;
+  }
+
+  .sub_dropdown {
+    position: absolute;
+    background-color: white;
+    display: none;
+    width: 100%;
+    left: -102%;
+    top: 0rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    li {
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.content_pad {
+  @include padding;
+}
+
+.service_content {
+  @include padding;
+}
+
+.about_content {
+  @include padding;
+}
+
+.boosting_content {
+  @include padding;
+}
+
+.number_main {
+  @include flex(flex-start, center);
+  gap: max(20%, 8rem);
+  .number_sub {
+    h1 {
+      display: flex;
+      font-weight: 900;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: black;
+      gap: 0.5rem;
+      .increment {
+        color: orangered;
+      }
+    }
+  }
+}
+
+.team_container {
+  background-color: rgba(192, 192, 192, 0.084);
+}
+
+// aboutuse BannerContainer
+
+.banner_container {
+  padding: 2rem 2rem 0rem 2rem;
+  background-color: #f2f6f5; // content
+  @include flex(center, center);
+  border-radius: 1rem;
+
+  // background-image: url("/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  // banner_shape
+
+  // banner_left
+  .banner_left {
+    @include flex(center, center);
+
+    // heading
+    .banner_heading {
+      position: relative;
+      // .green_circle {
+      //   display: inline-block;
+      //   width: 8rem;
+      //   height: 8rem;
+      //   background-color: rgba(0, 128, 0, 0.269);
+
+      //   position: absolute;
+      //   border-radius: 100%;
+      //   right: 14rem;
+      //   z-index: -1;
+      // }
+      h1 {
+        font-size: clamp(3.5rem, 5vw, 7.2rem);
+        font-weight: 700;
+        color: black;
+
+        // @include media("<=1200px") {
+        //   font-size: 5rem;
+
+        //   @include media("<=990px") {
+        //     font-size: 3.5rem;
+        //   }
+        // }
+      }
+    }
+
+    // paragrpah
+    .banner_paragraph {
+      p {
+        font-size: clamp(1rem, 5vw, 2rem);
+        // @include media("<=990px") {
+        //   font-size: 1.4rem;
+        // }
+      }
+    }
+
+    // button
+    .banner_button {
+      button {
+        padding: 1rem 2rem;
+        background: none;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 4rem;
+        transition: 0.6s;
+        &:hover {
+          outline: 0.2rem solid black;
+          background-color: transparent;
+          color: black;
+        }
+        @include media("<=990px") {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  // banner_right
+
+  .banner_right {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+    color: black;
+
+    .rank_card {
+      background-color: white;
+      position: absolute;
+      width: 18rem;
+      min-height: 24rem;
+      @include flex(space-between, center);
+      padding: 2rem 0rem;
+      border-radius: 2rem;
+      flex-direction: column;
+      bottom: 5rem;
+      @include media("<=desktop") {
+        width: 14rem;
+        height: 22rem;
+
+        @include media("<=laptop") {
+          width: 12rem;
+          height: 20rem;
+          left: -2rem;
+
+          @include media("<=tablet") {
+            width: 18rem;
+            height: 15rem;
+            left: 1rem;
+
+            @include media("<495px") {
+              width: 12rem;
+              height: 18rem;
+              left: 1rem;
+              @include media("<412px") {
+                width: 12rem;
+                height: 18rem;
+                left: 1rem;
+                top: 0rem;
+              }
+            }
+          }
+        }
+      }
+
+      p {
+        font-size: clamp(1.6rem, 2vw, 1.8rem);
+        text-align: center;
+        span {
+          font-weight: bold;
+        }
+      }
+      .rank {
+        width: 10rem;
+        height: 10rem;
+        background-color: #a87bfc;
+        border-radius: 100%;
+        @include flex(center, center);
+        color: white;
+
+        font-size: 2rem;
+        // border-top: 2rem solid transparent;
+
+        // border-right: 2rem solid orange;
+        // border-bottom: 2rem solid orange;
+        // border-left: 2rem solid transparent;
+
+        .purple {
+          width: 12rem;
+          height: 12rem;
+          position: absolute;
+          z-index: 2;
+          border-radius: 100%;
+          border-top: 2rem solid transparent;
+          border-right: 2rem solid pink;
+          border-bottom: 2rem solid pink;
+          border-left: 2rem solid transparent;
+          transform: rotate(52deg);
+          @include flex(center, center);
+
+          @include media("<=laptop") {
+            width: 10rem;
+            height: 10rem;
+            border-top: 1.5rem solid transparent;
+            border-right: 1.5rem solid pink;
+            border-bottom: 1.5rem solid pink;
+            border-left: 1.5rem solid transparent;
+          }
+          &::after {
+            width: 12.5rem;
+            height: 12.5rem;
+            z-index: 1;
+            content: "";
+            position: absolute;
+            border-radius: 100%;
+            transform: rotate(-45deg);
+            border-top: 2.5rem solid transparent;
+            border-right: 2.5rem solid rgb(246, 127, 147);
+            border-bottom: 2.5rem solid rgb(246, 127, 147);
+            border-left: 2.5rem solid transparent;
+
+            @include media("<=laptop") {
+              width: 10rem;
+              height: 10rem;
+              border-top: 1.5rem solid transparent;
+              border-right: 1.5rem solid rgb(246, 127, 147);
+              border-bottom: 1.5rem solid rgb(246, 127, 147);
+              border-left: 1.5rem solid transparent;
+              transform: rotate(330deg);
+            }
+          }
+        }
+        &::after {
+          width: 5rem;
+          content: "80%";
+          height: 5rem;
+          font-weight: bold;
+          font-size: 2rem;
+          background-color: white;
+          position: absolute;
+          @include flex(center, center);
+          border-radius: 100%;
+          color: black;
+
+          @include media("<=laptop") {
+            width: 4rem;
+            font-size: 1.5rem;
+            height: 4rem;
+          }
+        }
+
+        &:before {
+          width: 13rem;
+          height: 13rem;
+          content: "";
+          position: absolute;
+          background-color: transparent;
+          border-radius: 100%;
+          border-top: 3rem solid transparent;
+          transform: rotate(331deg);
+
+          border-right: 3rem solid orange;
+          border-bottom: 3rem solid orange;
+          border-left: 3rem solid transparent;
+          z-index: 3;
+
+          @include media("<=laptop") {
+            width: 10rem;
+            height: 10rem;
+            border-top: 2rem solid transparent;
+            border-right: 2rem solid orange;
+            border-bottom: 2rem solid orange;
+            border-left: 2rem solid transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .yellow {
+    position: absolute;
+    right: 3rem;
+    top: 5rem;
+    color: black;
+
+    @include media("<=desktop") {
+      right: 0rem;
+    }
+    .icon {
+      background-color: rgb(252, 183, 55);
+      width: 8rem;
+      border-radius: 4rem;
+      height: 10rem;
+      position: relative;
+      @include media("<=desktop") {
+        width: 6rem;
+        height: 8rem;
+      }
+      @include flex(center, center);
+      .right_arrow {
+        position: absolute;
+        font-size: 6rem;
+
+        left: -2rem;
+
+        @include media("<=desktop") {
+          font-size: 4rem;
+        }
+      }
+    }
+
+    h1 {
+      font-weight: bold;
+      @include media("<=desktop") {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .banner_heart {
+    display: flex;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    align-items: center;
+    column-gap: 2rem;
+    padding: 1rem;
+    border-radius: 4rem;
+    top: 33rem;
+    right: 3rem;
+    position: absolute;
+    color: black;
+
+    @include media("<=desktop") {
+      right: 1rem;
+      padding: 0.8rem;
+      font-size: 1.4rem;
+
+      @include media("<=laptop") {
+        width: 25rem;
+        padding: 1rem;
+        height: 6rem;
+        top: 25rem;
+        right: 0rem;
+
+        @include media("<=390px") {
+          top: 80%;
+          right: 0%;
+        }
+      }
+    }
+
+    .profile {
+      img {
+        object-fit: cover;
+        border-radius: 100%;
+        width: 6rem;
+        height: 6rem;
+        @include media("<=laptop") {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+
+    .heart_icon {
+      right: 0;
+      width: 5rem;
+      height: 5rem;
+      @include media("<=laptop") {
+        width: 4rem;
+        height: 4rem;
+      }
+
+      @include flex(center, center);
+      border-radius: 100%;
+      top: -2rem;
+      right: 1rem;
+      position: absolute;
+      box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+        rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      font-size: 3rem;
+      color: white;
+      background: linear-gradient(rgb(244, 111, 131), rgb(254, 87, 126));
+    }
+  }
+}
+
+// works
+
+.work_container {
+  .work_content {
+    @include padding;
+    min-height: 50vh;
+    .work_left {
+      border: none;
+      background-image: url("/dribble-image/back-3.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center, center;
+      display: grid;
+      grid-template-columns: repeat(2, 25rem);
+
+      @include media("<=1020px") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      grid-template-areas: "card1 card2" "card1 card3";
+      place-items: center;
+    }
+
+    .work_right {
+      @include heading;
+      @include paragraph;
+      @include black-button;
+    }
+
+    .card {
+      @include flex(center, center);
+      flex-direction: column;
+
+      h1 {
+        font-size: clamp(6rem, 10vw, 7.2rem);
+        // @include media("<=990px") {
+        //   font-size: 6rem;
+        // }
+        // font-weight: 900;
+      }
+      p {
+        text-transform: uppercase;
+      }
+    }
+
+    .card-1 {
+      background-color: #fff7ed;
+      border: none;
+      color: #ffbe16;
+      grid-area: card1;
+
+      width: 20rem;
+      height: 30rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+
+      .name {
+        font-size: 2rem;
+        font-weight: 550;
+        color: #ffbe16;
+      }
+    }
+
+    .card-2 {
+      background-color: rgb(192, 253, 192);
+      padding: 0.5rem;
+      color: rgb(142, 220, 142);
+      grid-area: card2;
+      height: 24rem;
+      border: none;
+      width: 20rem;
+
+      @include media("<=990px") {
+        width: 16rem;
+        height: 20rem;
+      }
+      h1 {
+        font-size: 5rem;
+        @include media("<=990px") {
+          font-size: 4rem;
+        }
+      }
+      .name {
+        font-weight: 550;
+        color: rgb(142, 220, 142);
+      }
+    }
+
+    .card-3 {
+      background-color: rgb(183, 241, 255);
+      padding: 0.5rem;
+      color: rgb(92, 180, 202);
+      grid-area: card3;
+      border: none;
+      width: 15rem;
+      height: 20rem;
+      margin-left: 2.5rem;
+      margin-top: 2rem;
+
+      @include media("<=990px") {
+        margin-left: 1.5rem;
+        width: 12rem;
+        height: 18rem;
+      }
+      h1 {
+        font-size: 5rem;
+        @include media("<=990px") {
+          font-size: 4rem;
+        }
+      }
+      .name {
+        font-weight: 550;
+        color: rgb(92, 180, 202);
+      }
+    }
+  }
+}
+
+// business
+
+.business_container {
+  .business_content {
+    @include padding;
+    .business_left {
+      @include heading;
+      li {
+        margin-top: 2rem;
+        line-height: 2.5rem;
+        font-size: 2rem;
+        @include media("<=990px") {
+          font-size: 1.4rem;
+        }
+      }
+      .scroll {
+        height: 30rem;
+        overflow-y: scroll;
+        padding-left: 1.5rem;
+        direction: rtl;
+        &::-webkit-scrollbar {
+          background-color: rgba(255, 68, 0, 0.32);
+          width: 0.5rem;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: red;
+
+          border-radius: 5rem;
+        }
+        // &::-webkit-scrollbar-thumb {
+        //   background-color: rgba(255, 68, 0, 0.32);
+        // }
+        // &::-webkit-scrollbar-track-piece {
+        //   background-color: rgba(255, 68, 0, 0.32);
+        // }
+      }
+    }
+
+    .business_right {
+      position: relative;
+      .business_image_container {
+        padding: 3rem 0rem 0rem 0rem;
+        border-radius: 2rem;
+        background-color: #e8f0eb;
+        position: relative;
+
+        .apple_shape {
+          position: absolute;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          padding: 1rem;
+          border-radius: 3rem;
+          left: -2rem;
+          top: 10rem;
+          background-color: white;
+          @include media("<=500px") {
+            left: 1rem;
+          }
+
+          // apple
+          .apple_font {
+            font-size: 6rem;
+            @include media("<=860px") {
+              font-size: 4rem;
+
+              @include media("<=500px") {
+                font-size: 3.5rem;
+              }
+            }
+          }
+        }
+
+        // google
+        .google_shape {
+          width: 17rem;
+
+          height: 22rem;
+          background-color: rgb(253, 217, 195);
+          position: absolute;
+          right: -5rem;
+          @include flex(center, center);
+          flex-direction: column;
+          top: -4rem;
+          z-index: 1;
+          border-radius: 3rem;
+
+          @include media("<=860px") {
+            top: -2rem;
+          }
+
+          .google_font {
+            font-size: 6rem;
+            @include media("<=860px") {
+              font-size: 3rem;
+
+              @include media("<=500px") {
+                font-size: 3.5rem;
+              }
+            }
+          }
+          @include media("<=850px") {
+            width: 15rem;
+            height: 20rem;
+            right: -4rem;
+
+            @include media("<=500px") {
+              width: 12rem;
+              height: 18rem;
+              right: 0rem;
+              top: 0rem;
+            }
+          }
+
+          h1 {
+            margin-top: 2rem;
+            font-size: 2.5ren;
+            font-weight: 800;
+            @include media("<=500px") {
+              font-size: 1.5rem;
+            }
+          }
+          p {
+            font-size: 2rem;
+          }
+          .google_icon {
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 2.5rem;
+            position: relative;
+            @include flex(center, center);
+
+            @include media("<=500px") {
+              padding: 0rem;
+            }
+
+            &::before {
+              width: 130%;
+              height: 130%;
+              background-color: rgba(255, 255, 255, 0.591);
+              content: "";
+              border-radius: 2.5rem;
+              position: absolute;
+
+              z-index: -1;
+            }
+          }
+
+          // likes
+        }
+      }
+      .liked {
+        display: flex;
+
+        background-color: white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        align-items: center;
+        column-gap: 2rem;
+        padding: 1rem;
+        border-radius: 4rem;
+        bottom: 7rem;
+        left: 0;
+        position: absolute;
+
+        @include media("<=990px") {
+          left: 2rem;
+          bottom: 3rem;
+          @include media("<=500px") {
+            right: 5rem;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            bottom: 2rem;
+          }
+        }
+
+        .profile {
+          img {
+            object-fit: cover;
+            border-radius: 100%;
+          }
+        }
+
+        .like_icon {
+          right: 0;
+          width: 5rem;
+          height: 5rem;
+
+          @include flex(center, center);
+          border-radius: 100%;
+          top: -2rem;
+          right: 1rem;
+          position: absolute;
+          box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+            rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+            rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+          font-size: 3rem;
+          color: white;
+          background: linear-gradient(rgb(73, 152, 226), rgb(87, 87, 254));
+        }
+      }
+    }
+  }
+}
+
+// openTagMain
+
+.home_main_container {
+  @include flex(flex-start, center);
+
+  &::after {
+    width: 60%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: -1;
+
+    @include media("<=laptop") {
+      width: 100%;
+      height: 80%;
+      @include media("<=tablet") {
+        width: 100%;
+        height: 80%;
+        @include media("<=phone") {
+          height: 80%;
+        }
+      }
+    }
+  }
+
+  .home_content {
+    min-height: 100vh;
+    .home_left {
+      // min-height: 60vh;
+      @include media("<=laptop") {
+        min-height: 40vh;
+      }
+      @include flex(center, center);
+    }
+    .home_right {
+      position: relative;
+      @include flex(center, center);
+      background-size: cover;
+
+      img {
+        width: 100%;
+        // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+        //   rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        object-fit: cover;
+        filter: drop-shadow(rgba(103, 104, 104, 0.678) 0px 9px 6px);
+
+        @include media("<=tablet") {
+          margin-right: 0rem;
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+}
+
+// team
+.team_container {
+  @include padding;
+
+  .card_grid {
+    transition: 0.6s;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    place-items: center;
+    grid-template-areas: "left_ad card1" "card2 card1" "card2 card3" ". card3";
+    grid-column-gap: 1rem;
+    grid-row-gap: 3rem;
+    @include media("<=laptop") {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: none;
+      grid-template-areas: "left_ad" "card1" "card2" "card3";
+      place-items: center;
+    }
+
+    .left_ad {
+      grid-area: left_ad;
+      max-width: 50rem;
+      justify-self: flex-end;
+      @include media("<=laptop") {
+        justify-self: center;
+        max-width: 100%;
+      }
+    }
+    .card1 {
+      grid-area: card1;
+      padding-right: 10rem;
+      @include media("<=desktop") {
+        padding: 0rem;
+
+        @include media("<=laptop") {
+          justify-self: flex-start;
+          @include media("<=tablet") {
+            justify-self: center;
+          }
+        }
+      }
+      .dot {
+        position: absolute;
+        width: 40%;
+        transform: rotate(180deg);
+        left: 38%;
+        bottom: -4%;
+        z-index: -1;
+        @include media("<=phone") {
+          display: none;
+        }
+      }
+    }
+    .card2 {
+      grid-area: card2;
+      padding-left: 10rem;
+      justify-self: flex-end;
+
+      @include media("<=desktop") {
+        padding: 0rem;
+        @include media("<=tablet") {
+          justify-self: center;
+        }
+      }
+      .dot {
+        position: absolute;
+        width: 40%;
+
+        left: -12%;
+        top: -4%;
+        @include media("<=phone") {
+          display: none;
+        }
+        z-index: -1;
+      }
+    }
+    .card3 {
+      grid-area: card3;
+      padding-right: 10rem;
+      @include media("<=desktop") {
+        padding: 0rem;
+
+        @include media("<=laptop") {
+          justify-self: flex-start;
+
+          @include media("<=tablet") {
+            justify-self: center;
+          }
+        }
+      }
+      .dot {
+        position: absolute;
+        width: 50%;
+        @include media("<=phone") {
+          display: none;
+        }
+
+        padding-right: 10rem;
+
+        left: 38%;
+        bottom: -7%;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+// opentag
+
+.open_container {
+  position: relative;
+  min-height: 60vh;
+  @include flex(center, center);
+  &:before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    top: 0;
+    height: 100%;
+    background-color: black;
+    right: 0;
+    z-index: -1;
+    @include media("<=laptop") {
+      width: 100%;
+      height: 60vh;
+    }
+  }
+  .opentag_container {
+    .opentag_content {
+      @include media(">=laptop") {
+        min-height: 100vh;
+      }
+      .opentag_left {
+        position: relative;
+        @include flex(center, center);
+        // @include media("<=laptop") {
+        //   width: 100%;
+        //   height: 60vh;
+        // }
+      }
+
+      .opentag_right {
+        @include flex(center, center);
+      }
+    }
+  }
+}
+
+// stats
+
+.stat_container {
+  .stat_content {
+    @include padding;
+    .stat_left {
+      position: relative;
+    }
+
+    .stat_right {
+      ul {
+        padding: 0;
+
+        li {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// accordian
+
+#flush-headingOne {
+  button {
+    &:hover {
+      p {
+        color: red;
+      }
+    }
+  }
+}
+
+.accordion-body {
+  @include readifont;
+}

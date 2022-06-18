@@ -1,0 +1,54 @@
+@import "../function";
+
+.gallery_content {
+  @include title;
+  @include heading;
+  @include design;
+  text-align: center;
+}
+
+.gallery_card_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "bottle tab magazine" "bottle book1 mobile" "book2 stat mobile";
+  grid-gap: 2rem;
+
+  @include media("<=990px") {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "bottle tab" "bottle book1" "book2 stat" "magazine magazine" "mobile mobile ";
+  }
+
+  @include media("<=576px") {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "bottle" "tab" "magazine" "book1" "stat" "book2" "mobile";
+  }
+  img {
+    width: 100%;
+  }
+  .card1 {
+    grid-area: bottle;
+  }
+
+  .card2 {
+    grid-area: book1;
+  }
+
+  .card3 {
+    grid-area: tab;
+  }
+
+  .card4 {
+    grid-area: book2;
+  }
+
+  .card5 {
+    grid-area: stat;
+  }
+  .card6 {
+    grid-area: magazine;
+  }
+  .card7 {
+    grid-area: mobile;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../function";
+
+.swiper_container {
+  overflow: hidden;
+  min-height: 50rem;
+
+  padding: 1rem;
+  @include flex(center, center);
+
+  .swiper {
+    max-width: 100%;
+    overflow: visible;
+  }
+}

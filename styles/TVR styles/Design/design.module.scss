@@ -1,0 +1,101 @@
+@import "../../function";
+
+.design_container {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.306)),
+    url("/tvr-images/bg2.png");
+  background-repeat: no-repeat;
+  background-position: center, center;
+  background-size: cover;
+  position: relative;
+  @include flex(center, center);
+  &::after {
+    content: "";
+    position: absolute;
+    top: -0.1rem;
+    background-size: cover;
+    z-index: 1;
+    right: 0;
+    width: 100%;
+    height: 1rem;
+    background-color: black;
+  }
+
+  .design_top {
+    color: white;
+    text-align: center;
+
+    li {
+      margin-top: 2rem;
+    }
+    .heading {
+      h1 {
+        font-size: clamp(3rem, 5vw, 5rem);
+        font-weight: 300;
+        span {
+          font-weight: 700;
+          color: $main-color;
+        }
+      }
+    }
+
+    .paragraph {
+      p {
+        word-spacing: 0.2rem;
+        line-height: 2.5rem;
+        word-break: 1rem;
+      }
+    }
+  }
+}
+
+.game_grid {
+  margin-top: 2rem;
+  @include flex(center, center);
+  gap: 3rem;
+}
+
+// design left
+
+.design_left {
+  img {
+    width: 100%;
+    @include media("<=phone") {
+      height: 100%;
+    }
+  }
+}
+
+.design_right {
+  @include media("<=tablet") {
+    text-align: center;
+    padding-block-start: 5rem;
+  }
+  .contact_button {
+    @include tvr_button;
+  }
+  li {
+    margin-top: 2rem;
+  }
+
+  .heading {
+    h1 {
+      font-size: clamp(3rem, 5vw, 7rem);
+      font-weight: 300;
+      word-spacing: 0.5rem;
+      color: white;
+      span {
+        font-weight: 700;
+        color: $main-color;
+      }
+    }
+  }
+
+  .paragraph {
+    p {
+      word-spacing: 0.2rem;
+      line-height: 2.5rem;
+      word-break: 1rem;
+    }
+  }
+}

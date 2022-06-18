@@ -1,0 +1,9 @@
+@import "../function";
+.top {
+  @include heading;
+  @include title;
+  @include design;
+  .design {
+    justify-content: flex-start;
+  }
+}

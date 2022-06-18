@@ -1,0 +1,15 @@
+@import "../function";
+
+.consult_content {
+  @include title;
+  @include heading;
+  @include design;
+  @include default_button;
+
+  li {
+    margin-top: 2rem;
+  }
+  .design {
+    justify-content: flex-start;
+  }
+}

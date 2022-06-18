@@ -1,0 +1,45 @@
+@import "../../function";
+
+.team_card_container {
+  background-color: white;
+  .image {
+    img {
+      width: 80%;
+      @include media("<=990px") {
+        width: 100%;
+      }
+    }
+  }
+
+  .team_card_content {
+    @include flex(center, center);
+
+    ul {
+      padding: 0.5rem;
+      text-align: center;
+      li {
+        margin-top: 1rem;
+      }
+
+      .social_icon {
+        @include flex(center, center);
+        gap: 0.5rem;
+        span {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 100%;
+          color: #d63384;
+          border: 0.1rem solid #d63384;
+
+          &:hover {
+            color: white;
+            background-color: #d63384;
+          }
+        }
+      }
+    }
+  }
+}

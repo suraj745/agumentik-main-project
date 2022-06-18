@@ -1,0 +1,107 @@
+@import "../../function";
+
+.advanced_container {
+  position: relative;
+  min-height: 100vh;
+  @include flex(center, center);
+  img {
+    position: absolute;
+  }
+  background-image: url("/tvr-images/Background\ copy.png");
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  @include media("<=phone") {
+    background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.486)),
+      url("/tvr-images/mobile\ background.png");
+  }
+  //   .back {
+  //     object-fit: cover;
+  //     height: 100%;
+  //     width: 100%;
+  //     object-position: center center;
+  //   }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-size: cover;
+    z-index: 1;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: polygon(100% 0, 0 0, 0 12%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-size: cover;
+    z-index: 1;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: polygon(100% 100%, 0 90%, 0 100%);
+  }
+}
+
+.advanced_content {
+  color: black;
+  @include media("<=phone") {
+    color: white;
+  }
+  .contact_button {
+    @include tvr_button;
+  }
+
+  li {
+    margin-top: 2rem;
+  }
+
+  .title {
+    h5 {
+      text-transform: uppercase;
+      color: $main-color;
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+  }
+
+  .heading {
+    h1 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .paragraph {
+    p {
+      word-spacing: 0.2rem;
+    }
+  }
+}
+
+// .front {
+//   right: 0;
+
+//   height: 100%;
+//   bottom: 0;
+//   filter: opacity(100%);
+
+//   @include media("<=tablet") {
+//     height: 100%;
+//     width: 100%;
+
+//     @include media("<=phone") {
+//       width: 100%;
+//       height: auto;
+//     }
+//   }
+// }

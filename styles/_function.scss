@@ -1,0 +1,337 @@
+// color variable
+@import "node_modules/react-modal-video/scss/modal-video.scss";
+@import "/node_modules/include-media/dist/include-media";
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100;300;400;500;600;700&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
+
+$main-font-family: "Roboto", sans-serif;
+$main-color: #e3202d;
+$optional-color: #fbe6d4;
+$white-color: #ffffff;
+$black-color: #202647;
+$paragraph-color: #6a6c72;
+$font-size: 1.5rem;
+$transition: 0.5s;
+// tvrbutton
+
+@mixin tvr_button {
+  button {
+    padding: 0.8em 1.8em;
+    border: 2px solid $main-color;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: 0.3s;
+    z-index: 1;
+    font-family: inherit;
+    color: rgb(255, 0, 0);
+    font-weight: 700;
+  }
+
+  button::before {
+    content: "";
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: $main-color;
+    transition: 0.5s ease;
+    display: block;
+    z-index: -1;
+  }
+
+  button:hover::before {
+    width: 105%;
+  }
+
+  button:hover {
+    color: white;
+  }
+}
+
+// paragraph
+@mixin paragraph {
+  .paragraph {
+    p {
+      line-height: 3.5rem;
+      font-size: 2rem;
+      @include media("<=990px") {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+// flex
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// breakpoint
+$breakpoints: (
+  xsphone: 0px,
+  phone: 576px,
+  tablet: 768px,
+  laptop: 992px,
+  desktop: 1200px,
+  xldesktop: 1400px,
+);
+
+@mixin image {
+  .image {
+    max-width: 60rem;
+
+    @include media("<=1400px") {
+      width: 55rem;
+
+      @include media("<=1200px") {
+        width: 50rem;
+
+        @include media("<=976px") {
+          width: 45rem;
+
+          @include media("<=530px") {
+            width: 40rem;
+
+            @include media("<=400px") {
+              width: 30rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin padding {
+  padding: 10rem 0rem;
+
+  @include media("<=tablet") {
+    padding: 7rem 0rem;
+
+    @include media("<=phone") {
+      padding: 5rem 0rem;
+    }
+  }
+}
+
+@mixin default_button {
+  .default {
+    cursor: pointer;
+    background-color: $main-color;
+    color: white;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    height: 4.8rem;
+
+    border: 1px solid #e3202d;
+    padding: 13px 30px 13px 30px;
+    border-radius: 4rem;
+    transition: $transition;
+
+    &:hover {
+      background-color: transparent;
+      color: red;
+    }
+
+    @include media("<=tablet") {
+      height: 4.4rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+// title
+
+@mixin title {
+  .title {
+    h5 {
+      font-size: 1.4rem;
+      color: #e3202d;
+      text-transform: uppercase;
+      font-weight: 500;
+
+      @include media("<=tablet") {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+// heading
+
+@mixin heading {
+  .heading {
+    h1 {
+      font-size: 3.8rem;
+      color: $black-color;
+      font-weight: 700;
+
+      @include media("<=1200px") {
+        font-size: 3rem;
+
+        @include media("<=996px") {
+          font-size: 2.6rem;
+
+          @include media("<=tablet") {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// buttons
+@mixin buttons {
+  .buttons {
+    button {
+      padding: 1.2rem 3.2rem;
+      border-radius: 40px;
+      border: none;
+      background: none;
+      background: $main-color;
+      color: white;
+      font-weight: 500;
+      font-size: 1.6rem;
+      text-transform: capitalize;
+    }
+  }
+}
+
+// design
+@mixin design {
+  .design {
+    @include flex(center, center);
+    text-align: center;
+    column-gap: 2rem;
+    span {
+      display: block;
+    }
+
+    & :nth-child(1) {
+      width: 6rem;
+      height: 0.4rem;
+      background-color: #fde3dc;
+    }
+
+    & :nth-child(2) {
+      width: 4rem;
+      height: 0.4rem;
+      background-color: #ff724e;
+    }
+  }
+}
+
+// black button
+@mixin black-button {
+  button {
+    padding: 1rem 2rem;
+    background: none;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4rem;
+    transition: 0.6s;
+    &:hover {
+      outline: 0.2rem solid black;
+      background-color: transparent;
+      color: black;
+    }
+    @include media("<=990px") {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+// readi_button
+
+@mixin readi_button {
+  /* From uiverse.io by @mrhyddenn */
+  button {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 10px 30px;
+    transition: 0.5s;
+    position: relative;
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
+    background: white;
+    border: none;
+    color: #fff;
+  }
+
+  button:hover {
+    letter-spacing: 0.25em;
+    // background: #ff1867;
+    color: white;
+    // box-shadow: 0 0 45px #ff1867;
+  }
+
+  button::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: $main-color;
+  }
+
+  button span {
+    position: relative;
+    z-index: 1;
+  }
+
+  button i {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  button i::before {
+    content: "";
+    position: absolute;
+    border: 2px solid #ff1867;
+    width: 7px;
+    height: 4px;
+    top: -3.5px;
+    left: 80%;
+    background: $main-color;
+    transform: translateX(-50%);
+    transition: 0.5s;
+  }
+
+  button:hover i::before {
+    width: 20px;
+    left: 20%;
+  }
+
+  button i::after {
+    content: "";
+    position: absolute;
+    border: 2px solid #ff1867;
+    width: 7px;
+    height: 4px;
+    bottom: -3.5px;
+    left: 20%;
+    background: $main-color;
+    transform: translateX(-50%);
+    transition: 0.5s;
+  }
+
+  button:hover i::after {
+    width: 20px;
+    left: 80%;
+  }
+}
+
+@mixin readifont {
+  p {
+    color: rgb(125, 122, 122);
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+  }
+}

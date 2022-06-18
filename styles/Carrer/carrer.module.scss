@@ -1,0 +1,155 @@
+@import "../function";
+.CarrerContainer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.808), rgba(0, 0, 0, 0.808)),
+    url("/images/coming-soon-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  ul {
+    color: white;
+    list-style: none;
+    text-align: center;
+
+    li {
+      margin-top: 2rem;
+    }
+    .heading1 {
+      font-weight: bold;
+      font-size: clamp(1.5rem, 10vw, 1.4rem);
+    }
+  }
+
+  min-height: 100vh;
+  padding: 5rem;
+  @include flex(center, center);
+
+  //   content
+  .CarrerContent {
+    padding: 1rem;
+
+    // heading
+
+    .heading {
+      font-size: clamp(2rem, 5vw, 4rem);
+    }
+
+    // title
+
+    .title {
+      font-size: 2rem;
+    }
+
+    // emailInput
+
+    .emailInput {
+      @include flex(center, center);
+
+      span {
+        @include flex(space-between, center);
+        height: 6rem;
+        border: 0.5rem solid rgba(0, 0, 0, 0.612);
+
+        background-color: white;
+        border-radius: 40px;
+        padding: 0.5rem;
+        width: 60rem;
+
+        @include media("<=1200px") {
+          width: 55rem;
+          @include media("<=576px") {
+            width: 40rem;
+          }
+        }
+
+        //   input
+        input {
+          padding: 2rem;
+          outline: none;
+          border: none;
+          height: 5rem;
+          border-radius: 40px;
+        }
+
+        //   button
+        button {
+          background-color: none;
+          border: none;
+          outline: none;
+          width: 15rem;
+          height: 4.8rem;
+          border-radius: 40px;
+          @include flex(center, center);
+          padding: 2rem;
+          background-color: #f45a43;
+          color: white;
+          font-weight: 550;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    // Time
+
+    .time {
+      @include flex(center, center);
+
+      height: 20rem;
+      .timeDesign {
+        ul {
+          @include flex(space-between, center);
+
+          li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 12rem;
+            margin-left: 2.5rem;
+            border: 0.5rem solid rgba(0, 0, 0, 0.612);
+            height: 12rem;
+
+            @include media("<=576px") {
+              width: 8rem;
+              height: 8rem;
+              font-size: 1rem;
+            }
+            background-color: white;
+            border-radius: 100%;
+            text-transform: capitalize;
+            font-weight: 540;
+            color: silver;
+
+            & :nth-last-child(2) {
+              font-size: 4rem;
+              color: red;
+            }
+
+            // & :nth-child(2) {
+            // }
+          }
+        }
+      }
+    }
+
+    .heading1 {
+      .aboutIcons span {
+        margin-top: 2rem;
+        width: 3rem;
+        height: 3rem;
+        display: inline-flex;
+        border-radius: 100%;
+        margin-left: 1rem;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        background-color: orangered;
+        transition: 0.5s;
+        outline: 1px solid red;
+
+        &:hover {
+          background-color: transparent;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@import "../function";
+
+.about_ads_container {
+  background-image: linear-gradient(#0000ffb7, #0000ffb7),
+    url("/images/page-banner-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center, center;
+  @include padding;
+  color: white;
+  @include flex(center, center);
+  margin-top: 2rem;
+  .about_ads_content {
+    text-align: center;
+    li {
+      margin-top: 1rem;
+    }
+
+    .title {
+      h5 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .heading {
+      h1 {
+        font-size: clamp(2rem, 4vw, 3.8rem);
+        font-weight: 700;
+      }
+    }
+
+    .input_container {
+      .input {
+        @include flex(space-between, center);
+        background-color: white;
+        padding: 0.5rem;
+        border-radius: 4rem;
+
+        input,
+        button {
+          padding: 1rem 2rem;
+          border-radius: 4rem;
+          border: none;
+          background: none;
+          outline: none;
+        }
+
+        button {
+          background-color: $main-color;
+          color: white;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

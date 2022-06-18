@@ -1,0 +1,48 @@
+@import "../function";
+
+.intro {
+  @include title;
+  @include heading;
+  @include design;
+  text-align: center;
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    section {
+      width: 100%;
+    }
+  }
+}
+
+@include default_button;
+
+.right_container {
+  li {
+    margin-top: 2rem;
+  }
+
+  .heading {
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $black-color;
+    }
+  }
+}
+
+.grid_tabs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1rem;
+  place-items: center;
+
+  @include media("<=990px") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.content {
+  margin-top: 2rem;
+}

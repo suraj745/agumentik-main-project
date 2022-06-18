@@ -1,0 +1,54 @@
+@import "../function";
+
+.card_container {
+  width: 100%;
+  padding: 3rem;
+  color: white;
+  background-color: white;
+  transition: $transition;
+  @include flex(center, flex-start);
+  flex-direction: column;
+  li {
+    margin-top: 1rem;
+  }
+  .icons {
+    border: 0.1rem solid white;
+    display: inline-flex;
+    width: 7rem;
+    height: 7rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    img {
+      width: 3rem;
+    }
+  }
+
+  .heading {
+    h5 {
+      font-size: 2rem;
+      color: black;
+      font-weight: 600;
+    }
+  }
+
+  .paragraph {
+    p {
+      color: $paragraph-color;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2rem);
+
+    background-color: red;
+    p,
+    h5 {
+      color: white;
+    }
+
+    .icons {
+      background-color: white;
+    }
+  }
+}

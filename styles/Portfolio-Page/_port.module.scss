@@ -1,0 +1,15 @@
+@import "../function";
+
+.port_content {
+  @include title;
+  @include heading;
+  @include design;
+  @include default_button;
+
+  .design {
+    justify-content: flex-start;
+  }
+  li {
+    margin-top: 1rem;
+  }
+}

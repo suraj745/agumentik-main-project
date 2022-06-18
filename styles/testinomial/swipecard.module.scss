@@ -1,0 +1,64 @@
+@import "../function";
+
+.card_container {
+  max-width: 100%;
+  background-color: #f6f5fb;
+  min-height: 25rem;
+  border-radius: 1rem;
+  @include flex(center, center);
+  flex-direction: column;
+  position: relative;
+  .image {
+    @include flex(center, center);
+
+    section {
+      border-radius: 100%;
+      position: absolute;
+      z-index: 2;
+      top: -9rem;
+
+      @include media("<=1200px") {
+        top: -8rem;
+
+        @include media("<=768px") {
+          top: -7rem;
+        }
+      }
+
+      img {
+        width: 12rem;
+        border-radius: 100%;
+
+        @include media("<=1200px") {
+          width: 10rem;
+          @include media("<=768px") {
+            max-width: 12rem;
+          }
+        }
+      }
+
+      &::after {
+        content: "";
+        width: 105%;
+        position: absolute;
+        left: 0rem;
+        top: -0.5rem;
+        z-index: -1;
+        border-radius: 100%;
+        height: 105%;
+        background-color: #f20791;
+      }
+    }
+  }
+}
+
+.card_content {
+  text-align: center;
+  line-height: 2.2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $black-color;
+  }
+}

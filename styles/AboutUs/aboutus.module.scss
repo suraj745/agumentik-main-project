@@ -1,0 +1,15 @@
+@import "../function";
+
+.right_content {
+  @include title;
+  @include heading;
+  @include design;
+
+  .design {
+    justify-content: flex-start;
+  }
+
+  li {
+    margin-top: 1rem;
+  }
+}

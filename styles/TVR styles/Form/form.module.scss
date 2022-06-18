@@ -1,0 +1,77 @@
+@import "../../function";
+
+.form_container {
+  min-height: 100vh;
+  @include flex(center, center);
+  background-image: url("/tvr-images/form.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .top_content {
+    color: white;
+    text-align: center;
+    .heading {
+      h1 {
+        font-size: clamp(3rem, 5vw, 5rem);
+        font-weight: 300;
+        span {
+          font-weight: 700;
+          color: $main-color;
+        }
+      }
+    }
+
+    .paragraph {
+      p {
+        word-spacing: 0.2rem;
+        line-height: 2.5rem;
+        word-break: 1rem;
+      }
+    }
+  }
+}
+
+.main_form {
+  width: 80%;
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "name email" "phone address" "message message";
+  color: white;
+
+  @include media("<=phone") {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "name " "email" "phone" "address" "message";
+  }
+  & :nth-child(1) {
+    grid-area: name;
+  }
+  & :nth-child(2) {
+    grid-area: email;
+  }
+  & :nth-child(3) {
+    grid-area: phone;
+  }
+  & :nth-child(4) {
+    grid-area: address;
+  }
+  & :nth-child(5) {
+    grid-area: message;
+  }
+
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 0.1rem solid white;
+    padding: 1rem 2rem;
+    color: white;
+    width: 100%;
+  }
+}
+
+.contact_button {
+  margin-top: 2rem;
+  @include tvr_button;
+}

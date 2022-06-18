@@ -1,0 +1,38 @@
+@import "../../function";
+
+.stat_card {
+  padding: 0rem;
+  text-align: center;
+  //   @include flex(center, center);
+  //   flex-direction: column;
+  .heading {
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+
+      @include media("<=desktop") {
+        font-size: 3rem;
+
+        @include media("<=tablet") {
+          font-size: 2rem;
+
+          @include media("<=phone") {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .paragraph {
+    p {
+      color: rgb(121, 118, 118);
+      text-transform: uppercase;
+      font-size: 1.2rem;
+
+      @include media("<=desktop") {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

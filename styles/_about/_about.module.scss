@@ -1,0 +1,17 @@
+@import "../function";
+
+.content_container {
+  @include heading;
+  @include title;
+
+  @include default_button;
+
+  li {
+    margin-top: 2rem;
+  }
+
+  .design {
+  }
+}
+
+@include image;

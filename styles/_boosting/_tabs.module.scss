@@ -1,0 +1,16 @@
+@import "../function";
+
+.icon_container {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 1.8rem;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $black-color;
+    margin-top: 1rem;
+  }
+}

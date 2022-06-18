@@ -1,0 +1,98 @@
+@import "../function";
+
+.footer_container {
+  background-image: url("/images/footer-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include flex(center, center);
+  padding: 1rem;
+
+  ul {
+    list-style: none;
+  }
+
+  .footer_content {
+    @include padding;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: flex-start;
+    grid-gap: 1rem;
+
+    @include media("<=990px") {
+      grid-template-columns: repeat(2, 1fr);
+
+      @include media("<=576px") {
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: inset;
+      }
+    }
+    // @include laptop {
+    //   grid-template-columns: repeat(3, 1fr);
+    //   @include tablet {
+    //     grid-template-columns: repeat(2, 1fr);
+
+    //     @include mobile {
+    //       grid-template-columns: repeat(1, 1fr);
+    //     }
+    //   }
+    // }
+    ul {
+      width: 100%;
+      li {
+        margin-top: 1rem;
+      }
+      p {
+        color: $paragraph-color;
+      }
+
+      .heading {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.304);
+        h1 {
+          font-size: 2rem;
+          font-weight: 600;
+
+          @include media("<=1200px") {
+            font-size: 1.6rem;
+
+            @include media("<=990px") {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .list {
+      flex: 1;
+      color: white;
+
+      a {
+        transition: 0.2s;
+        color: rgba(192, 192, 192, 0.502);
+        cursor: pointer;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      .icons {
+        span {
+          transition: $transition;
+          margin-left: 0.5rem;
+          display: inline-flex;
+          border: 1px solid white;
+          width: 3rem;
+          height: 3rem;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100%;
+
+          &:hover {
+            background-color: $main-color;
+            color: white;
+            border: 1px solid $main-color;
+          }
+        }
+      }
+    }
+  }
+}

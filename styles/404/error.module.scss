@@ -1,0 +1,17 @@
+@import "../function";
+.error_page {
+  @include heading;
+
+  @include title;
+  @include default_button;
+  text-align: center;
+  li {
+    margin-top: 1rem;
+  }
+
+  .image {
+    img {
+      width: 50%;
+    }
+  }
+}

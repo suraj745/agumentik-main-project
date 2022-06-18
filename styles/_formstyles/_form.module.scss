@@ -1,0 +1,66 @@
+@import "../function";
+
+.left_content {
+  @include heading;
+  li {
+    margin-top: 2rem;
+  }
+
+  .icons {
+    @include flex(flex-start, center);
+    gap: 1rem;
+    span {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 100%;
+      border: 1px solid $black-color;
+      color: $black-color;
+
+      &:hover {
+        border: 1px solid $main-color;
+        background-color: $main-color;
+        color: white;
+      }
+    }
+  }
+}
+
+.form {
+  @include default_button;
+
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    background-color: #f3f5fe;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+
+  .top {
+    @include flex(center, center);
+    gap: 2rem;
+    @include media("<=phone") {
+      flex-direction: column;
+    }
+  }
+  li {
+    margin-top: 2rem;
+  }
+
+  .message {
+    textarea {
+      border: none;
+      background: none;
+      outline: none;
+      background-color: #f3f5fe;
+      resize: none;
+      width: 100%;
+      padding: 1rem;
+    }
+  }
+}

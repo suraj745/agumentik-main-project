@@ -1,0 +1,45 @@
+@import "../function";
+
+.service_container {
+  .left_section {
+    @include title;
+    @include heading;
+    @include design;
+    @include default_button;
+
+    .design {
+      justify-content: flex-start;
+    }
+    li {
+      margin-top: 2rem;
+    }
+  }
+
+  .card_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    grid-column-gap: 2rem;
+
+    @include media("<=576px") {
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 2rem;
+    }
+    .card1,
+    .card3 {
+      margin-bottom: 2rem;
+
+      @include media("<=576px") {
+        margin-bottom: 0rem;
+      }
+    }
+
+    .card2,
+    .card4 {
+      margin-top: 2rem;
+      @include media("<=576px") {
+        margin-top: 0rem;
+      }
+    }
+  }
+}

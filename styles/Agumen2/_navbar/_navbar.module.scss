@@ -1,0 +1,51 @@
+@import "../../function";
+
+.nav_container {
+  height: 8rem;
+  background-color: white;
+  @include flex(center, center);
+  .logo_container {
+    @include flex(center, center);
+  }
+  .nav_menu {
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+
+    li {
+      color: $black-color;
+      font-weight: 500;
+      cursor: pointer;
+      padding-right: 1rem;
+      @include media("<=990px") {
+        padding-right: 0rem;
+      }
+    }
+  }
+
+  .hamburger {
+    @include flex(center, center);
+    column-gap: 2rem;
+    .animated {
+      @include flex(center, flex-end);
+      flex-direction: column;
+
+      &:hover :nth-child(3) {
+        width: 3.5rem;
+      }
+      span {
+        display: block;
+        width: 3.5rem;
+        height: 0.3rem;
+        background-color: #5b5b98;
+        margin-top: 0.5rem;
+        transition: $transition;
+      }
+
+      & :nth-child(3) {
+        width: 1.5rem;
+      }
+    }
+  }
+}

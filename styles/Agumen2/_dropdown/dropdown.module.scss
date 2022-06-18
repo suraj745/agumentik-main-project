@@ -1,0 +1,43 @@
+@import "../../function";
+
+.dropdown_container {
+  position: relative;
+  z-index: 3000;
+
+  .menu_name {
+    padding: 1rem;
+    cursor: pointer;
+
+    .name {
+      @include flex(center, center);
+      gap: 0.5rem;
+    }
+  }
+  &:hover .dropdown_list {
+    transform: translateY(0rem);
+    opacity: 1;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    li {
+      display: block;
+      padding: 1rem;
+    }
+  }
+
+  .dropdown_list {
+    position: absolute;
+    background-color: white;
+    width: 23rem;
+    transition: 0.4s;
+    li {
+      display: none;
+      cursor: pointer;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+    transform: translateY(8rem);
+  }
+}

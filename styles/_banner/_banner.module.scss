@@ -1,0 +1,584 @@
+@import "../function";
+
+.banner_container {
+  padding: 10rem;
+
+  @include media("<=tablet") {
+    padding: 7rem;
+
+    @include media("<=phone") {
+      padding: 5rem;
+    }
+  }
+
+  padding-bottom: 0rem;
+  border-bottom: 0.1rem solid rgba(192, 192, 192, 0.242);
+  .banner_content {
+    display: flex;
+    justify-content: center;
+
+    @include media("<=1200px") {
+      column-gap: 4rem;
+    }
+
+    @include media("<=990px") {
+      flex-direction: column;
+    }
+
+    // left-content
+
+    .left_content {
+      flex: 1;
+
+      @include media("<=990px") {
+        text-align: center;
+      }
+
+      li {
+        margin-top: 2rem;
+      }
+
+      .heading {
+        h1 {
+          font-size: 7.2rem;
+          color: $black-color;
+          font-weight: 500;
+          @include media("<=1200px") {
+            font-size: 5rem;
+
+            @include media("<=990px") {
+              font-size: 3.5rem;
+            }
+          }
+        }
+      }
+
+      .paragraph {
+        p {
+          font-size: 1.8rem;
+          line-height: 3rem;
+          font-weight: 500;
+
+          @include media("<=990px") {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .buttons {
+        @include flex(flex-start, center);
+        @include default_button;
+        column-gap: 1rem;
+        .default {
+          .buttonMore {
+            @include flex(center, center);
+            gap: 0.5rem;
+          }
+        }
+
+        @include media("<=990px") {
+          @include flex(center, center);
+
+          @include media("<=360px") {
+            flex-direction: column;
+            row-gap: 2rem;
+          }
+        }
+
+        .watch_video {
+          @include flex(center, center);
+          background-color: white;
+          border-radius: 40px;
+          width: 16rem;
+          column-gap: 2rem;
+
+          button {
+            background: none;
+            outline: none;
+            border: none;
+
+            height: 4.8rem;
+
+            color: $black-color;
+            font-weight: 500;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    // svg container
+
+    .svg_container {
+      flex: 1;
+
+      @include media("<=990px") {
+        @include flex(center, center);
+      }
+      .mobile_content {
+        display: none;
+        @include media("<=990px") {
+          display: block;
+        }
+      }
+      .svg_content {
+        @include media("<=990px") {
+          display: none;
+        }
+        position: relative;
+        height: 40rem;
+
+        img {
+          position: absolute;
+        }
+
+        & :nth-child(1) {
+          top: 0rem;
+          right: 5rem;
+          z-index: 0;
+
+          @include media("<=1400px") {
+            top: 0rem;
+            right: 1rem;
+            z-index: 0;
+
+            @include media("<=1200px") {
+              top: -1rem;
+              right: -9rem;
+              z-index: 0;
+            }
+          }
+        }
+
+        & :nth-child(2) {
+          top: 8rem;
+          right: 6rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: 9rem;
+            right: 4rem;
+            z-index: 0;
+
+            @include media("<=1200px") {
+              top: 9rem;
+              right: -2rem;
+              z-index: 0;
+            }
+          }
+        }
+        & :nth-child(3) {
+          top: 4rem;
+          right: 21rem;
+          z-index: 1;
+          @include media("<=1400px") {
+            top: 4rem;
+            right: 20rem;
+            z-index: 1;
+            @include media("<=1200px") {
+              top: 5rem;
+              right: 13rem;
+              z-index: 1;
+            }
+          }
+        }
+        & :nth-child(4) {
+          top: 29rem;
+          right: 29rem;
+          z-index: 1;
+          @include media("<=1400px") {
+            top: 28rem;
+            right: 36rem;
+            z-index: 3;
+            @include media("<=1200px") {
+              top: 31rem;
+              right: 28rem;
+              z-index: 3;
+            }
+          }
+        }
+        & :nth-child(5) {
+          top: 25rem;
+          right: 49rem;
+          z-index: 1;
+          @include media("<=1400px") {
+            top: 25rem;
+            right: 44rem;
+            z-index: 1;
+            @include media("<=1200px") {
+              top: 27rem;
+              right: 34rem;
+              z-index: 1;
+            }
+          }
+        }
+        & :nth-child(6) {
+          top: 2rem;
+          right: 34rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: 2rem;
+            right: 34rem;
+            z-index: 0;
+            @include media("<=1200px") {
+              top: -4rem;
+              right: 24rem;
+              z-index: 0;
+            }
+          }
+        }
+        & :nth-child(7) {
+          top: 17rem;
+          right: 45rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: 17rem;
+            right: 40rem;
+            z-index: 0;
+            @include media("<=1200px") {
+              top: 22rem;
+              right: 33rem;
+              z-index: 0;
+            }
+          }
+        }
+        & :nth-child(8) {
+          top: 21rem;
+          right: 33rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: 21rem;
+            right: 27rem;
+            z-index: 2;
+            @include media("<=1200px") {
+              top: 25rem;
+              right: 19rem;
+              z-index: 2;
+            }
+          }
+        }
+        & :nth-child(9) {
+          top: 25rem;
+          right: 27rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: 26rem;
+            right: 21rem;
+            z-index: 5;
+            @include media("<=1200px") {
+              top: 31rem;
+              right: 14rem;
+              z-index: 5;
+            }
+          }
+        }
+        & :nth-child(10) {
+          top: 8rem;
+          right: 17rem;
+          z-index: 1;
+          @include media("<=1400px") {
+            top: 11rem;
+            right: 16rem;
+            z-index: 1;
+            @include media("<=1200px") {
+              top: 11rem;
+              right: 10rem;
+              z-index: 1;
+            }
+          }
+        }
+        & :nth-child(11) {
+          top: 14rem;
+          right: 30rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: 18rem;
+            right: 27rem;
+            z-index: 0;
+            @include media("<=1200px") {
+              top: 20rem;
+              right: 18rem;
+              z-index: 0;
+            }
+          }
+        }
+        & :nth-child(12) {
+          top: -10rem;
+          right: 7rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: -9rem;
+            right: 5rem;
+            z-index: 0;
+            @include media("<=1200px") {
+              top: -9rem;
+              right: 0rem;
+              z-index: 0;
+            }
+          }
+        }
+        & :nth-child(13) {
+          top: 28rem;
+          right: 11rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: 28rem;
+            right: 11rem;
+            z-index: 0;
+            @include media("<=1200px") {
+              top: 28rem;
+              right: 11rem;
+              z-index: 0;
+            }
+          }
+        }
+        & :nth-child(14) {
+          top: -9rem;
+          right: 24rem;
+          z-index: 0;
+          @include media("<=1400px") {
+            top: -9rem;
+            right: 24rem;
+            z-index: 0;
+            @include media("<=1200px") {
+              top: -14rem;
+              right: 14rem;
+              z-index: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .brand_name {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+
+      left: 0;
+      @include flex(center, center);
+      h1 {
+        font-size: 20rem;
+        color: #f9f8fc;
+      }
+    }
+  }
+
+  .shape {
+    position: absolute;
+
+    @include media("<=996px") {
+      display: none;
+    }
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
+
+    img {
+      position: absolute;
+    }
+
+    @keyframes rotateMe {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes animationFramesOne {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      20% {
+        transform: translate(73px, -1px) rotate(36deg);
+      }
+      40% {
+        transform: translate(141px, 72px) rotate(72deg);
+      }
+      60% {
+        transform: translate(83px, 122px) rotate(108deg);
+      }
+      80% {
+        transform: translate(-40px, 72px) rotate(144deg);
+      }
+      100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+    }
+    @keyframes animationFramesTwo {
+      0% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      20% {
+        transform: translate(-73px, 1px) rotate(-36deg);
+      }
+      40% {
+        transform: translate(-141px, -72px) rotate(-72deg);
+      }
+      60% {
+        transform: translate(-83px, -122px) rotate(-108deg);
+      }
+      80% {
+        transform: translate(40px, -72px) rotate(-144deg);
+      }
+      100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+    }
+    @keyframes rotate3d {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+    @keyframes moveScale {
+      0% {
+        transform: scale(0.6);
+      }
+      50% {
+        transform: scale(0.8);
+      }
+      100% {
+        transform: scale(0.6);
+      }
+    }
+    @keyframes moveLeftBounce {
+      0% {
+        transform: translateX(0px);
+      }
+      50% {
+        transform: translateX(20px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+    }
+    @keyframes moveBounce {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    & :nth-child(1) {
+      left: 4rem;
+      top: 10rem;
+      z-index: 0rem;
+      width: 15rem;
+      animation-name: moveLeftBounce;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    & :nth-child(2) {
+      left: 75rem;
+      top: 50rem;
+      animation: moveBounce;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+
+    & :nth-child(3) {
+      left: 3rem;
+      top: 27rem;
+      animation-name: rotate3d;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+    }
+
+    & :nth-child(4) {
+      left: 5rem;
+      top: 47rem;
+    }
+
+    & :nth-child(5) {
+      left: 26rem;
+      top: 63rem;
+      animation-name: moveLeftBounce;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+    & :nth-child(6) {
+      left: 69rem;
+      top: 15rem;
+      animation-name: rotate3d;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+    & :nth-child(7) {
+      left: 39rem;
+      top: 15rem;
+
+      animation-name: animationFramesOne;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+    }
+    & :nth-child(8) {
+      right: 3rem;
+      top: 62rem;
+      animation-name: moveLeftBounce;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+    & :nth-child(9) {
+      right: 5rem;
+      top: 18rem;
+      animation-name: moveScale;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+    & :nth-child(10) {
+      left: 18rem;
+      top: 43rem;
+    }
+    & :nth-child(11) {
+      right: 2rem;
+      top: 38rem;
+    }
+  }
+
+  .brand_name {
+    h1 {
+      font-size: 20rem;
+      font-weight: 900;
+      color: #f9f8fc;
+
+      @include media("<=1400px") {
+        font-size: 18rem;
+
+        @include media("<=1200px") {
+          font-size: 16rem;
+
+          @include media("<=1100px") {
+            font-size: 14rem;
+
+            @include media("<=940px") {
+              font-size: 12rem;
+
+              @include media("<=800px") {
+                font-size: 8rem;
+
+                @include media("<=550px") {
+                  font-size: 6rem;
+
+                  @include media("<=360px") {
+                    font-size: 4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

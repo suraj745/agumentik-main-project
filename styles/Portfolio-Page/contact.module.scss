@@ -1,0 +1,10 @@
+@import "../function";
+
+.contact_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  @include media("<=laptop") {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
