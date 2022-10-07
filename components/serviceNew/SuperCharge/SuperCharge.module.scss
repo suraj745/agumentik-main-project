@@ -1,0 +1,43 @@
+@import "/styles/function";
+
+.supercharge_outer_container {
+  background-color: rgb(239, 239, 239);
+  min: 90vh;
+  .supercharge_inner_container {
+    .top {
+      text-align: center;
+
+      li {
+        margin-top: 2rem;
+      }
+
+      & > :nth-child(1) h1 {
+        font-size: 5rem;
+        color: rgba(0, 0, 0, 0.809);
+      }
+
+      & > :nth-child(2) p {
+        font-size: clamp(1.6rem, 4vw, 1.8rem);
+      }
+    }
+
+    .card_grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 4vw, 3rem);
+      place-items: center;
+
+      @include media("<=990px") {
+        grid-template-columns: repeat(3, 1fr);
+
+        @include media("<=768px") {
+          grid-template-columns: repeat(2, 1fr);
+
+          @include media("<=576px") {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+      }
+    }
+  }
+}

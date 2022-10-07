@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/404/error.module.scss";
+import Link from "next/link";
 const _404 = () => {
   return (
     <section className="container">
@@ -7,7 +8,7 @@ const _404 = () => {
         <ul className={styles.error_page}>
           <li className={styles.image}>
             <img
-              src="https://agumentik-software.vercel.app/images/404.png"
+              src="/404 Error with a cute animal-rafiki.svg"
               alt=""
               width={"100%"}
             />
@@ -22,9 +23,11 @@ const _404 = () => {
               or is temporarily unavailable.
             </p>
           </li>
-          <li className={styles.default_button}>
-            <button className={styles.default}> Go To Home</button>
-          </li>
+          <Link href={"/"} passHref>
+            <li className={styles.default_button}>
+              <button className={styles.default}> Go To Home</button>
+            </li>
+          </Link>
         </ul>
       </section>
     </section>

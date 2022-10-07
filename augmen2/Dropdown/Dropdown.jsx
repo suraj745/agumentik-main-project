@@ -12,7 +12,13 @@ export default class Dropdown extends Component {
               <span>{MenuName}</span>
               <span> {us}</span>
             </section>
-            <BsChevronDown />
+            <BsChevronDown
+              fontSize={"1rem"}
+              style={{
+                marginLeft: "0.2rem",
+                marginTop: "0.5rem",
+              }}
+            />
           </section>
         </section>
 

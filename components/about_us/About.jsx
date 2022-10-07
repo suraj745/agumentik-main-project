@@ -1,37 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "../../styles/_about/_about.module.scss";
 import Number from "./Number";
 import Image from "next/image";
+import Link from "next/link";
+import Brochere from "./Brochere";
 const About = () => {
+  const [form, setForm] = useState(false);
   return (
-    <section classname={styles.about_container}>
+    <section className={styles.about_container}>
       <section className="container">
         <section className="about_content row align-items-center justify-content-center flex-lg-row flex-column   ">
           <section
             className={
-              "col-lg-6 d-flex align-items-center justify-content-center"
+              "col-lg-6 d-flex align-items-center justify-content-between overflow-hidden"
             }
           >
             <img
+              data-aos="fade-right"
               className={styles.image}
-              src="/images/about-image.png"
+              src="/aboutus.webp"
               alt=""
             />
           </section>
-          <section className="col-lg-6">
+          <section className="col-lg-5">
             <ul className={styles.content_container}>
-              <li className={styles.title}>
+              <li data-aos="fade-up" className={styles.title}>
                 <h5>About Us</h5>
               </li>
-              <li className={styles.heading}>
+              <li
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className={styles.heading}
+              >
                 <h1>Who We Are</h1>
               </li>
               <li className={styles.design}>
                 <span></span>
                 <span></span>
               </li>
-              <li className={styles.paragraph}>
+              <li
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className={styles.paragraph}
+              >
                 <p>
                   Agumentik have a big vision, taking very small but smart steps
                   to get toward success. We are humble, visionary and gigantic
@@ -42,15 +54,29 @@ const About = () => {
                   efficient.
                 </p>
               </li>
-              <li>
+              <li data-aos="fade-up" data-aos-delay="600">
                 <Number num1={"1150"} num2={"450"} />
               </li>
-              <li className={styles.buttons}>
-                <button className={styles.default}>Download Brochere</button>
+              <li
+                data-aos="fade-up"
+                data-aos-delay="800"
+                className={styles.buttons}
+              >
+                <button
+                  className={styles.default}
+                  onClick={() => setForm(true)}
+                >
+                  Download Brochere
+                </button>
+
+                <Link href={"/about-us"} passHref>
+                  <button className={styles.default}>Know More</button>
+                </Link>
               </li>
             </ul>
           </section>
         </section>
+        {form && <Brochere setForm={() => setForm(false)} />}
       </section>
     </section>
   );

@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "../../styles/TVR styles/WhyWork/workcard.module.scss";
 import { motion } from "framer-motion";
-const WorkCard = ({ icons, heading, paragraph }) => {
+const WorkCard = ({ icons, heading, paragraph, id }) => {
   return (
-    <ul className={styles.whycard_container}>
+    <ul
+      data-aos="fade-up"
+      data-aos-delay={`${id * 200}`}
+      className={styles.whycard_container}
+    >
       <li className={styles.icons}>
         <div className={styles.hexagono}>
           <motion.img

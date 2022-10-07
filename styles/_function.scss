@@ -1,7 +1,6 @@
 // color variable
 @import "node_modules/react-modal-video/scss/modal-video.scss";
 @import "/node_modules/include-media/dist/include-media";
-@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100;300;400;500;600;700&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 
 $main-font-family: "Roboto", sans-serif;
 $main-color: #e3202d;
@@ -110,15 +109,7 @@ $breakpoints: (
 }
 
 @mixin padding {
-  padding: 10rem 0rem;
-
-  @include media("<=tablet") {
-    padding: 7rem 0rem;
-
-    @include media("<=phone") {
-      padding: 5rem 0rem;
-    }
-  }
+  padding-block: clamp(3rem, 5vw, 7rem);
 }
 
 @mixin default_button {
@@ -130,14 +121,14 @@ $breakpoints: (
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     height: 4.8rem;
 
-    border: 1px solid #e3202d;
+    border: 2px solid #e3202d;
     padding: 13px 30px 13px 30px;
     border-radius: 4rem;
     transition: $transition;
 
     &:hover {
-      background-color: transparent;
-      color: red;
+      color: $main-color;
+      background-color: white;
     }
 
     @include media("<=tablet") {
@@ -333,5 +324,17 @@ $breakpoints: (
     color: rgb(125, 122, 122);
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 500;
+  }
+}
+
+.searchedlist {
+  & > li {
+    margin-top: 1rem;
+  }
+  height: 10rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

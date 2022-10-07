@@ -4,7 +4,6 @@
   padding: 0;
   text-align: left;
 
-  max-width: 45rem;
   .image {
     position: relative;
     img {
@@ -42,6 +41,7 @@
   .paragraph {
     p {
       color: rgb(135, 135, 135);
+      font-size: 1.6rem;
     }
   }
 

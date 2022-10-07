@@ -39,12 +39,12 @@ export default class FAQ extends Component {
       {
         key: "5",
         heading: "I’m a developer, how do I become a Glass Partner?",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+        text: "Lorem ipsumhttps://agumentik-educamp-suraj745.vercel.app/     dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       },
     ];
     return (
-      <section className="container">
-        <section className=" content_pad row flex-column">
+      <section className={`${styles.main_container} container`}>
+        <section className="row  flex-column ">
           <section className="col">
             <ul className={styles.top}>
               <li className={styles.title}>
@@ -60,7 +60,7 @@ export default class FAQ extends Component {
             </ul>
           </section>
           <section className="col">
-            <section className="row align-items-center ">
+            <section className="row py-5 justify-content-between align-items-center gap-1 ">
               <section className="col-lg-6">
                 <Accordion allowZeroExpanded>
                   {list.map((value) => {
@@ -82,8 +82,13 @@ export default class FAQ extends Component {
                   })}
                 </Accordion>
               </section>
-              <section className="col-lg-6">
-                <img src="/images/faq-image.png" alt="" width={"100%"} />
+              <section className="col-lg-5">
+                <img
+                  className={styles.faq_image}
+                  src="/wedevelop2.jpg"
+                  alt=""
+                  width={"100%"}
+                />
               </section>
             </section>
           </section>

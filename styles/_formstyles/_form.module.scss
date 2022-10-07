@@ -2,9 +2,6 @@
 
 .left_content {
   @include heading;
-  li {
-    margin-top: 2rem;
-  }
 
   .icons {
     @include flex(flex-start, center);
@@ -40,16 +37,19 @@
     border-radius: 0.5rem;
     width: 100%;
   }
-
+  & form > ul > li {
+    margin-top: 2rem;
+  }
   .top {
     @include flex(center, center);
-    gap: 2rem;
+    gap: 1rem;
     @include media("<=phone") {
       flex-direction: column;
     }
-  }
-  li {
-    margin-top: 2rem;
+
+    & > section {
+      width: 100%;
+    }
   }
 
   .message {
@@ -63,4 +63,8 @@
       padding: 1rem;
     }
   }
+}
+
+.field {
+  text-align: left !important;
 }

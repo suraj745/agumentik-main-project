@@ -29,10 +29,10 @@ const Customer = () => {
               </li>
               <li className={styles.company_grid}>
                 <section>
-                  {img.map((value) => {
+                  {img.map((value, index) => {
                     return (
                       <motion.img
-                        key={img.length}
+                        key={index}
                         src={value}
                         alt="img"
                         whileHover={{ scale: 1.05 }}

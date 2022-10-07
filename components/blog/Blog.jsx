@@ -4,37 +4,44 @@ import BlogCard from "./BlogCard";
 export default class Blog extends Component {
   blogDetail = [
     {
-      imageUrl: "/images/project/1.jpg",
+      imageUrl: "/start1.jpg",
       heading: "Startup Marketing Solution for Business Owner",
-      date: "02",
+      tag: `popular`,
       class: styles.blogcard1,
+      para: `      At vero eos et accusamus et iusto odio dignissimos ducimus qui
+      blanditiis praesentium voluptatum deleniti`,
     },
 
     {
-      imageUrl: "/images/project/2.jpg",
+      imageUrl: "/startup2.jpg",
       heading: "Startup Marketing Solution for Business Owner",
-      date: "03",
+      tag: `trending`,
       class: styles.blogcard2,
+      para: `      At vero eos et accusamus et iusto odio dignissimos ducimus qui
+      blanditiis praesentium voluptatum deleniti`,
     },
 
     {
-      imageUrl: "/images/project/3.jpg",
+      imageUrl: "/start3.jpg",
       heading: "Startup Marketing Solution for Business Owner",
-      date: "03",
+      tag: `popular`,
       class: styles.blogcard3,
+      para: `      At vero eos et accusamus et iusto odio dignissimos ducimus qui
+      blanditiis praesentium voluptatum deleniti`,
     },
   ];
   render() {
+    const { title, heading, para } = this.props;
     return (
-      <section className="container">
+      <section className="container mt-5">
         <section className="boosting_content row flex-column">
           <section className="col">
             <ul className={styles.blog_content}>
               <li className={styles.title}>
-                <h5>Blog</h5>
+                <h5>{title}</h5>
               </li>
               <li className={styles.heading}>
-                <h1>Read Our Latest Project</h1>
+                <h1>{heading}</h1>
               </li>
               <li className={styles.design}>
                 <span></span>
@@ -42,14 +49,17 @@ export default class Blog extends Component {
               </li>
             </ul>
           </section>
-          <section className="col mt-5">
+          <section className="col mt-5 overflow-hidden ">
             <section className={styles.grid_card}>
-              {this.blogDetail.map((value) => {
+              {this.blogDetail.map((value, index) => {
                 return (
                   <BlogCard
+                    id={index}
+                    para={value.para}
+                    key={index}
                     image={value.imageUrl}
                     className={value.class}
-                    date={value.date}
+                    tag={value.tag}
                     heading={value.heading}
                   />
                 );

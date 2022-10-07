@@ -1,4 +1,6 @@
 @import "./function";
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100;300;400;500;600;700&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +39,7 @@ html {
     background-color: white;
     display: none;
     width: 100%;
-    left: -102%;
+    right: -102%;
     top: 0rem;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -64,7 +66,7 @@ html {
 }
 
 .boosting_content {
-  @include padding;
+  padding-block-end: clamp(3rem, 6vw, 10rem);
 }
 
 .number_main {
@@ -826,10 +828,10 @@ html {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
+    gap: 2rem;
     place-items: center;
     grid-template-areas: "left_ad card1" "card2 card1" "card2 card3" ". card3";
-    grid-column-gap: 1rem;
-    grid-row-gap: 3rem;
+
     @include media("<=laptop") {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: none;
@@ -840,7 +842,7 @@ html {
     .left_ad {
       grid-area: left_ad;
       max-width: 50rem;
-      justify-self: flex-end;
+      justify-self: flex-start;
       @include media("<=laptop") {
         justify-self: center;
         max-width: 100%;
@@ -848,7 +850,8 @@ html {
     }
     .card1 {
       grid-area: card1;
-      padding-right: 10rem;
+      width: 100% !important;
+
       @include media("<=desktop") {
         padding: 0rem;
 
@@ -873,8 +876,8 @@ html {
     }
     .card2 {
       grid-area: card2;
-      padding-left: 10rem;
-      justify-self: flex-end;
+      padding-left: 4rem;
+      justify-self: flex-start;
 
       @include media("<=desktop") {
         padding: 0rem;
@@ -896,7 +899,8 @@ html {
     }
     .card3 {
       grid-area: card3;
-      padding-right: 10rem;
+
+      justify-self: flex-end;
       @include media("<=desktop") {
         padding: 0rem;
 
@@ -969,10 +973,13 @@ html {
 // stats
 
 .stat_container {
+  padding-block-start: 8rem;
   .stat_content {
     @include padding;
     .stat_left {
       position: relative;
+      left: 4rem;
+      bottom: 4rem;
     }
 
     .stat_right {
@@ -1001,4 +1008,69 @@ html {
 
 .accordion-body {
   @include readifont;
+}
+
+.swiper-pagination-bullet {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $main-color !important;
+}
+
+.stickynavbar {
+  position: fixed;
+  animation: moveDown 0.3s ease-in-out;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background-color: white;
+  z-index: 10000000;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+
+.card1 {
+  width: 58%;
+  height: 590px;
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.accordion-button {
+  padding-inline: 0 !important;
+}
+.accordion-body {
+  padding-inline: 0rem !important;
+}
+
+.accordion-button {
+  padding-inline: 2rem !important;
+}
+
+.accordion-button {
+  background-color: white !important;
+  color: black;
+
+  &:hover {
+    color: $main-color;
+  }
+}
+
+.accordion-button .collapsed {
+  color: black !important;
+}
+.accordion-button:not(.collapsed) {
+  color: black !important;
 }

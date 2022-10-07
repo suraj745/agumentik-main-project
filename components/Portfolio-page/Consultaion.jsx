@@ -2,10 +2,16 @@ import React from "react";
 import styles from "../../styles/Portfolio-Page/consult.module.scss";
 const Consultaion = () => {
   return (
-    <section className="container">
-      <section className="row">
-        <section className="col-lg-6">
-          <img src="/images/Port-page/consult.jpg" alt="" width={"100%"} />
+    <section className="container py-5">
+      <section className="row justify-content-between py-5">
+        <section className="col-lg-5">
+          <img
+            className={styles.image}
+            src="/consult.jpg"
+            alt=""
+            width={"100%"}
+            style={{ objectFit: "contain", height: "40rem" }}
+          />
         </section>
         <section className="col-lg-6 d-flex align-items-center">
           <ul className={styles.consult_content}>
@@ -28,7 +34,7 @@ const Consultaion = () => {
                 dummy text of the printing and typesetting industry.
               </p>
             </li>
-            <li className={styles.button}>
+            <li className={`${styles.button} mt-5`}>
               <button className={styles.default}>Book A Consultation</button>
             </li>
           </ul>

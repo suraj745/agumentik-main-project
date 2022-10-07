@@ -9,7 +9,6 @@
 }
 
 .small {
-  padding-left: 15rem;
   @include media("<=laptop") {
     padding-left: 0rem;
   }

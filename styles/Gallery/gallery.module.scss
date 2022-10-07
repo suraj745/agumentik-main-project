@@ -52,3 +52,32 @@
     grid-area: mobile;
   }
 }
+
+.gallery_content {
+  @include flex(center, space-between);
+  position: relative;
+  align-items: center;
+
+  @include media("<=990px") {
+    flex-direction: column;
+  }
+
+  .search {
+    @include flex(center, center);
+    position: absolute;
+    @include media("<=990px") {
+      position: relative;
+    }
+    border: 0.2rem solid silver;
+
+    border-radius: 0.5rem;
+    right: 0vh;
+    & > input {
+      text-indent: 1rem;
+      padding: 0.8rem;
+      width: min(30rem, 40vw);
+      outline: none;
+      border: none;
+    }
+  }
+}

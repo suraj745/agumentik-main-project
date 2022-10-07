@@ -1,170 +1,199 @@
-import React, { Component } from "react";
+import React, { useReducer, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "../../styles/_boosting/_boosting.module.scss";
 import Tabs from "./Tabs";
-import Image from "next/image";
-export default class Boosting extends Component {
-  constructor() {
-    super();
 
-    this.state = {
-      heading: "Real-Time Analytics",
-      image: "/images/tab/1.jpg",
-    };
-  }
-  tabs = [
-    {
-      img: "/png2/001-app-development.png",
-      name: "Project 1",
-      background: "#f3fc93",
-      state: {
-        heading: "Real-Time Analytics",
-        image: "/images/tab/1.jpg",
-      },
-    },
-    {
-      img: "/png2/001-app-development.png",
-      name: "Project 2",
-      background: "#c2f19e",
-      state: {
-        heading: "Pay-Per Click",
-        image: "/images/tab/2.jpg",
-      },
-    },
-    {
-      img: "/png2/001-app-development.png",
-      name: "Project 3",
-      background: "#eccca8",
-      state: {
-        heading: "Online Marketing",
-        image: "/images/tab/3.jpg",
-      },
-    },
-    {
-      img: "/png2/001-app-development.png",
-      name: "Project 4",
-      background: "#8ff0db",
-      state: { heading: "Email Marketing", image: "/images/tab/4.jpg" },
-    },
-    {
-      img: "/png2/001-app-development.png",
-      name: "Project 5",
-      background: "#cac0f8",
-      state: {
-        heading: "Social Marketing",
-        image: "/images/tab/5.jpg",
-      },
-    },
-    {
-      img: "/png2/001-app-development.png",
-      name: "Project 6",
-      background: "#96dbf5",
-      state: { heading: "Digital Marketing", image: "/images/tab/6.jpg" },
-    },
-  ];
-  render() {
-    return (
-      <Container className={styles.boosting_container}>
-        <Row className="boosting_content flex-column justify-content-between align-items-center flex-column">
-          <Col className="d-flex justify-content-center align-items-center">
-            <ul className={styles.intro}>
-              <li className={styles.title}>
-                <h5>Boosting</h5>
-              </li>
-              <li className={styles.heading}>
-                <h1>Our Recent Projects</h1>
-              </li>
-              <li className={styles.design}>
-                <span></span>
-                <span></span>
-              </li>
-            </ul>
-          </Col>
-          <Col className="mt-5">
-            <section className={styles.grid_tabs}>
-              {this.tabs.map((value) => {
-                return (
-                  <Tabs
-                    state={() => this.setState(value.state)}
-                    key={this.tabs.length}
-                    icon={value.img}
-                    heading={value.name}
-                    background={value.background}
-                  />
-                );
-              })}
-            </section>
-          </Col>
+import {
+  initialState,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+} from "./BoostingData";
+import { useEffect } from "react";
 
-          <Col className={styles.content}>
-            <Row className="flex-column flex-lg-row justify-content-center align-items-center">
-              <Col className="d-flex justify-content-center align-items-center ">
-                <img src={this.state.image} width={"75%"} />
-              </Col>
-              <Col>
-                <ul className={styles.right_container}>
-                  <li className={styles.heading}>
-                    <h1>{this.state.heading}</h1>
-                  </li>
-                  <li className={styles.paragraph}>
-                    <p>
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable. If you are going to
-                      use a passage of Lorem Ipsum, you need to be sure there
-                      isn't anything embarrassing hidden in the middle of text.
-                    </p>
-                  </li>
-                  <li className={styles.cards}>
-                    <Row className="flex-column flex-sm-row align-items-center justify-content-spacebetween">
-                      <Col>
-                        <section className="d-flex justify-content-center align-items-center">
-                          <span className="p-3">
-                            <img
-                              className={styles.icon}
-                              src="/mycollection/png/002-seo.png"
-                              alt=""
-                              width={"30rem"}
-                            />
-                          </span>
-                          <span>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt.
-                            </p>
-                          </span>
-                        </section>
-                      </Col>
-                      <Col>
-                        <section className="d-flex justify-content-center align-items-center">
-                          <span className="p-3">
-                            <img
-                              className={styles.icon}
-                              src="/mycollection/png/002-seo.png"
-                              alt=""
-                              width={"30rem"}
-                            />
-                          </span>
-                          <span>
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do eiusmod tempor incididunt.
-                            </p>
-                          </span>
-                        </section>
-                      </Col>
-                    </Row>
-                  </li>
-                  <li className={styles.buttons}>
-                    <button className={styles.default}>Discover More</button>
-                  </li>
-                </ul>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
-    );
+/* ------------------------------ InitialState ------------------------------ */
+
+/* ---------------------------- Reducer function ----------------------------*/
+
+const tabs = [
+  {
+    img: `/boosting/web-development.png`,
+    name: `Website Development`,
+    background: ``,
+    type: "PROJECT_1",
+    payload: initialState,
+  },
+  {
+    img: "/boosting/shopping.png",
+    name: "Ecommerce Development",
+    background: "",
+    type: "PROJECT_2",
+    payload: project2,
+  },
+  {
+    img: "/boosting/app-development.png",
+    name: "Mobile App Development",
+    background: "",
+    type: "PROJECT_3",
+    payload: project3,
+  },
+  {
+    img: "/boosting/software.png",
+    name: "Software Development",
+    background: "",
+    type: "PROJECT_4",
+    payload: project4,
+  },
+  {
+    img: "/boosting/social-media.png",
+    name: "Digital Marketing",
+    background: "",
+    type: "PROJECT_5",
+    payload: project5,
+  },
+  {
+    img: "/boosting/pay-per-click.png",
+    name: "Pay-Per Click",
+    background: "",
+    type: "PROJECT_6",
+    payload: project6,
+  },
+];
+
+console.log("tabs", Tabs[0]);
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "PROJECT_1":
+      return (state = action.payload);
+
+    case "PROJECT_2":
+      return (state = action.payload);
+
+    case "PROJECT_3":
+      return (state = action.payload);
+
+    case "PROJECT_4":
+      return (state = action.payload);
+
+    case "PROJECT_5":
+      return (state = action.payload);
+
+    case "PROJECT_6":
+      return (state = action.payload);
+
+    default:
+      return state;
   }
-}
+};
+const Boosting = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const [select, setSelect] = useState(tabs[0]);
+
+  return (
+    <Container className={styles.boosting_container}>
+      <Row className="boosting_content flex-column justify-content-between align-items-center flex-column">
+        <Col className="d-flex justify-content-center align-items-center">
+          <ul className={styles.intro}>
+            <li className={styles.title}>
+              <h5>Boosting</h5>
+            </li>
+            <li className={styles.heading}>
+              <h1>Our Recent Projects</h1>
+            </li>
+            <li className={styles.design}>
+              <span></span>
+              <span></span>
+            </li>
+          </ul>
+        </Col>
+        <Col className="mt-5 ">
+          <section className={styles.grid_tabs}>
+            {tabs.map((value, index) => {
+              return (
+                <Tabs
+                  state={() => {
+                    dispatch({ type: value.type, payload: value.payload });
+                  }}
+                  key={index}
+                  icon={value.img}
+                  heading={value.name}
+                  background={value.background}
+                  classname={value === select ? styles.active : ""}
+                  setSelect={() => setSelect(value)}
+                />
+              );
+            })}
+          </section>
+        </Col>
+
+        <Col className={`${styles.content} mt-5 `}>
+          <Row className="flex-column flex-lg-row justify-content-center align-items-center gap-3 gap-sm-0">
+            <Col className="d-flex justify-content-center align-items-center ">
+              <img
+                className={styles.boosting_image}
+                src={state.img}
+                width={"100%"}
+              />
+            </Col>
+            <Col>
+              <ul className={styles.right_container}>
+                <li className={styles.heading}>
+                  <h1>{state.heading}</h1>
+                </li>
+                <li className={styles.paragraph}>
+                  <p>{state.para}</p>
+                </li>
+                <li className={styles.cards}>
+                  <Row className="flex-column flex-sm-row align-items-center  justify-content-spacebetween">
+                    <Col>
+                      <section className="d-flex justify-content-center align-items-center">
+                        <span className="p-3">
+                          <img
+                            className={styles.icon}
+                            src={state.card1Img}
+                            alt=""
+                            width={"40rem"}
+                          />
+                        </span>
+                        <span>
+                          <p>{state.card1}</p>
+                        </span>
+                      </section>
+                    </Col>
+                    <Col>
+                      <section className="d-flex justify-content-center align-items-center">
+                        <span className="p-3">
+                          <img
+                            className={styles.icon}
+                            src={state.card2Img}
+                            alt=""
+                            width={"40rem"}
+                          />
+                        </span>
+                        <span>
+                          <p>{state.card2}</p>
+                        </span>
+                      </section>
+                    </Col>
+                  </Row>
+                </li>
+                <li
+                  className={`${styles.buttons} d-flex gap-3 flex-wrap justify-content-center`}
+                >
+                  <button className={styles.default}>Discover More</button>
+                  <button className={styles.default}>Download Brochere</button>
+                  <button className={styles.default}>Book a Demo</button>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default Boosting;

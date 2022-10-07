@@ -98,11 +98,17 @@
 
 .social {
   position: absolute;
-
+  width: 50rem;
+  @include flex(center, center);
   bottom: -2%;
   right: 10%;
   color: white;
-  @include flex(center, center);
+
+  & > span {
+    display: flex;
+    gap: 1rem;
+  }
+
   column-gap: 0.5rem;
 
   @include media("<=desktop") {
@@ -112,40 +118,44 @@
       @include media("<=tablet") {
         right: 4%;
         bottom: -10%;
-
-        @include media("<=phone") {
-          top: -9.5rem;
-          right: 0rem;
-          column-gap: 0.1rem;
-        }
       }
     }
   }
 
   .icon {
     display: inline-flex;
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.5rem;
 
     border-radius: 100%;
     justify-content: center;
-    padding: 0.5rem;
-    margin-left: 2rem;
+
+    cursor: pointer;
     @include media("<=tablet") {
       margin-left: 0.5rem;
     }
     align-items: center;
     background-color: rgb(74, 74, 74);
+    transition: 0.4s;
+
+    &:hover {
+      background-color: white;
+      color: rgb(74, 74, 74);
+      border: 0.1rem solid rgb(74, 74, 74);
+    }
   }
   .line {
     display: block;
-    width: 8rem;
+    width: clamp(3rem, 5vw, 8rem);
+
     height: 0.1rem;
-    @include media("<=phone") {
-      display: none;
-    }
+    // animation-name: widthAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: center;
+
     @include media("<=tablet") {
-      width: 4rem;
       @include media("<=phone") {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
@@ -156,11 +166,35 @@
 
   p {
     color: rgb(74, 74, 74);
-    @include media("<=tablet") {
-      font-size: 1.2rem;
-    }
-    @include media("<=phone") {
-      display: none;
-    }
+    margin: 0;
+    font-size: clamp(1.6rem, 4vw, 1.8rem);
+  }
+}
+
+@keyframes widthAnimation {
+  0% {
+    width: 0rem;
+  }
+
+  50% {
+    width: 8rem;
+  }
+
+  100% {
+    width: 0rem;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

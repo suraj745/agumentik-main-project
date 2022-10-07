@@ -28,41 +28,47 @@ export default class Team extends Component {
   ];
   render() {
     return (
-      <section className="team_container container">
-        <section className="team_content card_grid">
-          <section className="left_ad">
-            <ul className={styles.card}>
-              <li className={styles.card_heading}>
-                <h1 className="d-flex">
-                  <span className={styles.left_word} style={{ color: "white" }}>
-                    Bu
-                  </span>
-                  <span className={styles.right_word}>
-                    ilding Teams from scratch
-                  </span>
-                </h1>
-              </li>
+      <section className="team_container container-fluid">
+        <section className="container">
+          <section className="team_content card_grid">
+            <section className="left_ad">
+              <ul className={styles.card}>
+                <li className={styles.card_heading}>
+                  <h1 className="d-flex">
+                    <span
+                      className={styles.left_word}
+                      style={{ color: "white" }}
+                    >
+                      Bu
+                    </span>
+                    <span className={styles.right_word}>
+                      ilding Teams from scratch
+                    </span>
+                  </h1>
+                </li>
 
-              <li className={styles.paragraph}>
-                <p>
-                  We are challenging ourselves to create the next market
-                  standard in terms of scalability,agility and technology. And
-                  we need you to get together.
-                </p>
-              </li>
-            </ul>
+                <li className={styles.paragraph}>
+                  <p>
+                    We are challenging ourselves to create the next market
+                    standard in terms of scalability,agility and technology. And
+                    we need you to get together.
+                  </p>
+                </li>
+              </ul>
+            </section>
+
+            {this.cards.map((value, index) => {
+              return (
+                <TeamCard
+                  key={index}
+                  className={value.class}
+                  heading={value.heading}
+                  paragraph={value.paragraph}
+                  image={value.image}
+                />
+              );
+            })}
           </section>
-
-          {this.cards.map((value) => {
-            return (
-              <TeamCard
-                className={value.class}
-                heading={value.heading}
-                paragraph={value.paragraph}
-                image={value.image}
-              />
-            );
-          })}
         </section>
       </section>
     );

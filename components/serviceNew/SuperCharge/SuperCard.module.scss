@@ -1,0 +1,48 @@
+@import "/styles/function.scss";
+
+.supercard_container {
+  background-color: white;
+  padding: 1rem;
+  max-width: 25rem;
+  min-height: 25rem;
+  @include flex(space-around, center);
+  flex-direction: column;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+
+  @include media("<=576px") {
+    max-width: 100%;
+  }
+
+  &:hover > :nth-child(1) > :not(p) {
+    color: $main-color;
+  }
+  & li {
+    margin-top: 1rem;
+    @include flex(center, center);
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    & > .icon {
+      width: 6rem;
+    }
+  }
+
+  & > :nth-child(1) p {
+    font-size: clamp(1.6rem, 4vw, 1.8rem);
+    text-transform: capitalize;
+    strong {
+      color: rgba(0, 0, 0, 0.809);
+    }
+  }
+
+  & > :nth-child(2) {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      color: $main_color;
+    }
+  }
+}

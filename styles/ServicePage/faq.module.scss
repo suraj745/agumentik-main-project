@@ -1,9 +1,21 @@
 @import "../function";
+
+.main_container {
+  padding-block-start: 4rem;
+}
 .top {
+  text-align: center;
   @include heading;
   @include title;
   @include design;
   .design {
-    justify-content: flex-start;
+    justify-content: center;
+  }
+}
+
+.AccordionItem {
+  border: none;
+  &:nth-child(n + 2) {
+    margin-top: 1rem;
   }
 }

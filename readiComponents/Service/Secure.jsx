@@ -32,35 +32,17 @@ const Secure = () => {
           <motion.img
             src="/readi-images/secure1.png"
             alt=""
-            initial={{ rotate: 0, opacity: 0 }}
-            whileInView={{
-              rotate: 360,
-              opacity: 1,
-              transition: { duration: 0.6, delay: 0.4 },
-            }}
-            viewport={{ once: true }}
+            data-aos="fade-up"
           />
           <motion.img
             src="/readi-images/secure2.png"
             alt=""
-            initial={{ rotate: 0, opacity: 0 }}
-            whileInView={{
-              rotate: -360,
-              opacity: 1,
-              transition: { duration: 0.6, delay: 0.6 },
-            }}
-            viewport={{ once: true }}
+            data-aos="fade-left"
           />
           <motion.img
             src="/readi-images/secure3.png"
             alt=""
-            initial={{ rotate: 0, opacity: 0 }}
-            whileInView={{
-              rotate: [360, -360],
-              opacity: 1,
-              transition: { duration: 0.6, delay: 0.2 },
-            }}
-            viewport={{ once: true }}
+            data-aos="fade-right"
           />
         </styles>
       </section>

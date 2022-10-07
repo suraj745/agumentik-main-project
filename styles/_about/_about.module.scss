@@ -10,8 +10,14 @@
     margin-top: 2rem;
   }
 
-  .design {
+  .buttons {
+    @include flex(flex-start, center);
+    gap: 2rem;
   }
 }
 
 @include image;
+
+.image {
+  height: 35rem;
+}

@@ -3,12 +3,16 @@
 .swiper_container {
   overflow: hidden;
   min-height: 50rem;
-
   padding: 1rem;
   @include flex(center, center);
 
   .swiper {
     max-width: 100%;
     overflow: visible;
+  }
+
+  .swiper_inner {
+    min-height: 35rem;
+    @include flex(center, center);
   }
 }

@@ -34,9 +34,9 @@ const Team = () => {
           </section>
           <section className="col py-5">
             <section className="row">
-              {teamDetail.map((value) => {
+              {teamDetail.map((value, index) => {
                 return (
-                  <section className="col-md-6" key={teamDetail.length}>
+                  <section className="col-md-6" key={index}>
                     <TeamCard
                       image={value.image}
                       name={value.name}

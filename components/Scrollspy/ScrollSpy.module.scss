@@ -1,0 +1,58 @@
+@import "/styles/function";
+
+.faq_container {
+  @include padding;
+  .faq_main_container {
+    position: relative;
+    .left {
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      & > :not(:nth-child(1)) {
+        margin-top: 1rem;
+      }
+
+      & > li {
+        border: 0.1rem solid transparent;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        font-size: 1.8rem;
+      }
+    }
+
+    .right {
+      height: 50vh;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      overflow-y: scroll;
+      & > :not(:nth-child(1)) {
+        margin-top: 1rem;
+      }
+      & > li {
+        min-height: 50vh;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.heading > h1 {
+  font-size: clamp(3rem, 4vw, 5rem);
+  text-align: center;
+  color: #313131;
+}
+
+.active {
+  color: $main-color;
+
+  border: 0.1rem solid $main-color !important;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.active2 {
+  color: $main-color;
+}

@@ -6,20 +6,34 @@ const Banner = () => {
       <section className="container">
         <section className="row align-items-center">
           <ul className={styles.banner_content}>
-            <li className={styles.heading}>
+            <li
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className={styles.heading}
+            >
               <h1>
                 We are <span className={styles.bold}>AG</span>
                 <br />
                 virtual reality system
               </h1>
             </li>
-            <li className={styles.paragraph}>
+            <li
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+              className={styles.paragraph}
+            >
               <p>
                 We belive true VR can only be experienced through
                 large-scale,full-body immersion
               </p>
             </li>
-            <li className={styles.contact_button}>
+            <li
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+              className={styles.contact_button}
+            >
               <button>Contact Us</button>
             </li>
           </ul>

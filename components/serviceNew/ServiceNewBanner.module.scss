@@ -1,0 +1,129 @@
+@import "/styles/function";
+
+.ServiceNewBanner_outer_container {
+  @include flex(center, center);
+  padding-block: 3rem;
+  .ServiceNewBanner_inner_container {
+    .intro {
+      & > li {
+        & > h1 {
+          font-size: clamp(4.5rem, 8vw, 10rem);
+          color: rgba(0, 0, 0, 0.809);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.coursel_container {
+  .swiper_container {
+    @include flex(center, center);
+    opacity: 1;
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 21%;
+    height: 590px;
+    @include flex(center, flex-end);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        rgba(0, 0, 0, 0.06) 60%,
+        rgba(0, 0, 0, 0.625)
+      );
+    }
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: -1;
+      object-position: center center;
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+  transition: 0.4s;
+
+  color: white;
+  @include flex(space-around, center);
+  & > :nth-child(1) h1 {
+    font-size: clamp(3rem, 5vw, 5rem);
+  }
+
+  & > :nth-child(2) h1 {
+    font-size: clamp(3rem, 5vw, 4rem);
+  }
+}
+
+.content2 {
+  transition: 0.4s;
+
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+  color: white;
+  transform: rotate(-90deg);
+  @include flex(space-around, center);
+  & > :nth-child(1) h1 {
+    font-size: clamp(3rem, 5vw, 5rem);
+  }
+  bottom: 8rem;
+  left: -1rem;
+}
+
+.search {
+  width: min(45rem, 105%);
+  height: 12rem;
+  margin-bottom: 0;
+
+  position: relative;
+  @include media(">=990px") {
+    top: 5rem;
+    left: 1rem;
+  }
+  z-index: 10;
+
+  background-color: white;
+  @include flex(space-around, center);
+
+  overflow: hidden;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  & > input {
+    height: 12rem;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-indent: 2rem;
+  }
+
+  .goButton {
+    background-color: $main-color;
+    height: 100%;
+    @include flex(center, center);
+    width: 20rem;
+    color: white;
+
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(234, 98, 98);
+    }
+  }
+}

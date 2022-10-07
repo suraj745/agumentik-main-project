@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Container } from "react-bootstrap";
 import ModalVideo from "react-modal-video";
 import { useState } from "react";
+
+import Link from "next/link";
 const Banner = () => {
   const [isOpen, setOpen] = useState(false);
   return (
@@ -13,31 +15,44 @@ const Banner = () => {
         channel="youtube"
         autoplay
         isOpen={isOpen}
-        videoId="L61p2uyiMSo"
+        videoId="1f7FyNxUo0E"
         onClose={() => setOpen(false)}
       />
       <section className={styles.banner_content}>
         <ul className={styles.left_content}>
-          <li className={styles.heading}>
+          <li data-aos="fade-up" className={styles.heading}>
             <h1>Digital Agency with Excellence Service</h1>
           </li>
-          <li className={styles.paragraph}>
+          <li
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className={`${styles.paragraph} overflow-hidden`}
+          >
             <p>
               We are the fastest growing startup in Andhra Pradesh for designing
               Software, Website Development, App Development, Animation, Game
               Designing and Digital Marketing Era.
             </p>
           </li>
-          <li className={styles.buttons}>
-            <button className={styles.default}>
-              <span className={styles.buttonMore}>
-                <span>More</span> <span> About</span> <span>Us</span>
-              </span>
-            </button>
+          <li
+            className={styles.buttons}
+            data-aos="fade-up"
+            data-aos-delay="1000"
+          >
+            <Link href={"/about-us"}>
+              <button className={styles.default}>
+                <span className={styles.buttonMore}>
+                  <span>More</span> <span> About</span> <span>Us</span>
+                </span>
+              </button>
+            </Link>
 
             <section className={styles.watch_video}>
               <button onClick={() => setOpen(true)}>Watch Video</button>
-              <AiOutlinePlayCircle fontSize={"2.5rem"} color={"#e72f64"} />
+              <AiOutlinePlayCircle
+                fontSize={"2.5rem"}
+                className={styles.play_button}
+              />
             </section>
           </li>
         </ul>
@@ -160,7 +175,7 @@ const Banner = () => {
         <img src="/images/shape/11.png" alt="image" />
       </section>
 
-      <section className={styles.brand_name}>
+      <section className={`${styles.brand_name} text-center`}>
         <h1>AGUMENTIK</h1>
       </section>
     </section>

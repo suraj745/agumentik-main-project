@@ -35,14 +35,19 @@
 .main_form {
   width: 80%;
   display: grid;
-  grid-gap: 4rem;
+  grid-column-gap: 4rem;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "name email" "phone address" "message message";
+  grid-template-areas: "name email" "phone address" "message message" "button button";
   color: white;
+
+  & > section > section {
+    padding-top: 1rem;
+    height: 6rem;
+  }
 
   @include media("<=phone") {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: "name " "email" "phone" "address" "message";
+    grid-template-areas: "name " "email" "phone" "address" "message" "button";
   }
   & :nth-child(1) {
     grid-area: name;
@@ -60,6 +65,10 @@
     grid-area: message;
   }
 
+  & :nth-child(6) {
+    grid-area: button;
+  }
+
   input {
     background: none;
     border: none;
@@ -74,4 +83,7 @@
 .contact_button {
   margin-top: 2rem;
   @include tvr_button;
+}
+
+.first_row {
 }

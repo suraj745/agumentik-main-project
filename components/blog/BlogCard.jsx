@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import styles from "../../styles/blog/_blog.module.scss";
 import { FaUser, FaRegComments } from "react-icons/fa";
+import Link from "next/link";
 export default class BlogCard extends Component {
   render() {
-    const { className, date, heading, image } = this.props;
+    const { className, tag, heading, image, id, para } = this.props;
     return (
-      <section className={className}>
+      <section
+        className={className}
+        data-aos="fade-up"
+        data-aos-delay={`${id * 200}`}
+        data-aos-once="false"
+        style={{ maxWidth: "40rem" }}
+      >
         <section className={styles.blog_card}>
           <section className={styles.banner}>
             <img src={image} alt="" />
 
             <div className={styles.tag}>
-              <span>{date}</span>
-              <span>January</span>
+              <span>{tag}</span>
             </div>
           </section>
 
@@ -33,13 +39,12 @@ export default class BlogCard extends Component {
                 </div>
               </div>
               <h1>{heading}</h1>
-              <p>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum deleniti
-              </p>
+              <p>{para}</p>
 
-              <section className={styles.buttons}>
-                <button className={styles.default}>Read More</button>
+              <section className={`${styles.buttons} mt-5`}>
+                <Link href={"/blog"}>
+                  <button className={styles.default}>Read More</button>
+                </Link>
               </section>
             </div>
           </section>

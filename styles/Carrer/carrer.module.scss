@@ -153,3 +153,22 @@
     }
   }
 }
+
+.back_button {
+  & > button {
+    border: 0.1rem solid white;
+    padding: 1rem 0rem;
+    border-radius: 4rem;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    transition: 0.4s;
+    margin-top: 2rem;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}

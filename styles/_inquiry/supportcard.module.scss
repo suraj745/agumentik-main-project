@@ -59,21 +59,17 @@
 
     .cardContent1 {
       background-color: #f6f5fb;
-      position: absolute;
       width: 100%;
       height: 100%;
-      left: 0;
-      top: 0;
       z-index: 8;
       padding: 2rem;
-
-      text-align: left;
+      text-align: center !important;
       .icon {
         display: inline-flex;
         padding: 1rem;
         width: 8rem;
         height: 8rem;
-        border: 1px solid black;
+        border: 0.1rem solid black;
         justify-content: center;
         align-items: center;
         border-style: dashed;
@@ -102,66 +98,62 @@
     }
 
     // content2
-    .cardContent2 {
-      position: absolute;
+  }
 
-      @include flex(center, center);
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      z-index: 1;
-      top: 0;
+  .cardContent2 {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 
-      background-color: #f6f5fb;
-      padding: 1rem;
+    background-color: #f6f5fb;
+    padding: 1rem;
 
-      .heading1 {
-        color: $paragraph-color;
-        font-size: 1.5rem;
-        font-weight: normal;
-      }
-      .input {
-        padding: 0rem 2rem;
-        input {
-          padding: 1rem;
-          border: none;
-          outline: none;
-          background-color: white;
-          width: 40rem;
-          margin-top: 1rem;
+    .heading1 {
+      color: $paragraph-color;
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+    .input {
+      padding: 0rem 2rem;
+      input {
+        padding: 1rem;
+        border: none;
+        outline: none;
+        background-color: white;
+        width: 40rem;
+        margin-top: 1rem;
 
-          @include media("<=1179px") {
-            width: 35rem;
+        @include media("<=1179px") {
+          width: 35rem;
 
-            @include media("<=480px") {
-              width: 30rem;
+          @include media("<=480px") {
+            width: 30rem;
 
-              @include media("<=431px") {
-                width: 25rem;
-              }
+            @include media("<=431px") {
+              width: 25rem;
             }
           }
         }
       }
+    }
 
-      .button button {
+    .button button {
+      background: none;
+      outline: none;
+      padding: 1rem 3rem;
+      border-radius: 40px;
+      border: none;
+      background-color: red;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: 550;
+      transition: 0.5s;
+
+      &:hover {
         background: none;
-        outline: none;
-        padding: 1rem 3rem;
-        border-radius: 40px;
-        border: none;
-        background-color: red;
-        color: white;
-        font-size: 1.6rem;
-        font-weight: 550;
-        transition: 0.5s;
-
-        &:hover {
-          background: none;
-          color: red;
-          outline: 1px solid red;
-        }
+        color: red;
+        outline: 1px solid red;
       }
     }
   }

@@ -69,10 +69,15 @@ const Home = () => {
               objectFit={"scale-down"}
             />
             <section className={styles.social}>
-              {home_icon.map((value) => {
-                return <span className={styles.icon}>{value}</span>;
-              })}
-
+              <span>
+                {home_icon.map((value, index) => {
+                  return (
+                    <span key={index} className={styles.icon}>
+                      {value}
+                    </span>
+                  );
+                })}
+              </span>
               <span className={styles.line}></span>
               <p>FOLLOW US</p>
             </section>

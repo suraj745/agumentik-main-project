@@ -1,10 +1,14 @@
 @import "../function";
-.contact_card {
-  padding: 1rem;
-  @include flex(flex-start, flex-start);
+
+.card_content {
+  @include flex(flex-start, center);
   gap: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  cursor: pointer;
+  padding-inline: 2rem;
+  height: 10rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   .icons {
     border: 1px dashed $black-color;
     border-radius: 100%;
@@ -14,19 +18,36 @@
     justify-content: center;
     align-items: center;
   }
-
   &:hover .icons {
     background-color: $main-color;
     color: white;
     border: 1px solid $main-color;
   }
 
-  .card_content {
-    .heading {
-      color: $black-color;
-    }
-    p {
-      font-weight: 500;
+  .heading {
+    color: $black-color;
+  }
+  p {
+    font-weight: 500;
+  }
+}
+
+.card_content2 {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding-inline: 2rem;
+  height: 10rem;
+
+  .heading > p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & > :nth-child(1) {
+      font-size: 2rem;
     }
   }
 }

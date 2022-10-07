@@ -3,6 +3,7 @@
 .nav_container {
   height: 8.4rem;
   @include flex(center, center);
+  animation: moveDown 0.3s ease-in-out;
   padding: 1.5rem 0rem 1.5rem 0rem;
 
   section {
@@ -13,24 +14,24 @@
     flex: 1;
   }
 
-  // menus
-  .menus {
-    flex: 2;
-    color: $black-color;
-    @include flex(center, center);
+  // // menus
+  // .menus {
+  //   flex: 2;
+  //   color: $black-color;
+  //   @include flex(center, center);
 
-    a {
-      font-weight: 500;
-      padding: 1.5rem;
-      @include media("<=1200") {
-        padding: 0.3rem;
-      }
-    }
+  //   a {
+  //     font-weight: 500;
+  //     padding: 1.5rem;
+  //     @include media("<=1200") {
+  //       padding: 0.3rem;
+  //     }
+  //   }
 
-    @include media("<tablet") {
-      display: none;
-    }
-  }
+  //   @include media("<tablet") {
+  //     display: none;
+  //   }
+  // }
 
   // hamburger
   .hamburgers {

@@ -7,7 +7,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { useMediaQuery } from "react-responsive";
 // import required modules
-import { FreeMode, Pagination } from "swiper";
+import { FreeMode, Pagination, Autoplay } from "swiper";
 export default function ServiceSwiper() {
   const tablet = useMediaQuery({ query: "(max-width:768px)" });
   const mobile = useMediaQuery({ query: "(max-width:480px)" });
@@ -53,17 +53,15 @@ export default function ServiceSwiper() {
           <section className="col">
             <section className={styles.car} style={{ marginTop: "2rem" }}>
               <Swiper
+                autoplay={true}
                 slidesPerView={mobile ? 2 : tablet ? 3 : 5}
                 spaceBetween={mobile ? 4 : tablet ? 5 : 8}
-                pagination={{
-                  clickable: true,
-                }}
-                modules={[FreeMode, Pagination]}
+                modules={[FreeMode, Pagination, Autoplay]}
                 className={styles.mySwiper}
               >
-                {images.map((value) => {
+                {images.map((value, index) => {
                   return (
-                    <SwiperSlide key={images.length}>
+                    <SwiperSlide key={index}>
                       <Image src={value} width={250} height={200} alt={"img"} />
                     </SwiperSlide>
                   );

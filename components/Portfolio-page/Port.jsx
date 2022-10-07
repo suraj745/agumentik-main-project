@@ -2,10 +2,15 @@ import React from "react";
 import styles from "../../styles/Portfolio-Page/_port.module.scss";
 const Port = () => {
   return (
-    <section className="container">
-      <section className="row content_pad ">
-        <section className="col-lg-6 d-flex align-items-center">
-          <img src="/images/Port-page/port.svg" alt="image" width={"100%"} />
+    <section className="container py-5">
+      <section className="row py-5 justify-content-between ">
+        <section className="col-lg-5 d-flex align-items-center">
+          <img
+            className={styles.image}
+            src="/port.jpg"
+            alt="image"
+            width={"100%"}
+          />
         </section>
         <section className="col-lg-6 d-flex align-items-center">
           <ul className={styles.port_content}>
@@ -28,7 +33,7 @@ const Port = () => {
                 dummy text of the printing and typesetting industry.
               </p>
             </li>
-            <li className={styles.button}>
+            <li className={`${styles.button} mt-5`}>
               <button className={styles.default}>Know More</button>
             </li>
           </ul>

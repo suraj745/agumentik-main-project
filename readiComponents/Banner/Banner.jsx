@@ -14,7 +14,9 @@ const Banner = () => {
                 <p>
                   <span>Watch </span>
                   <AiFillPlayCircle fontSize={"3rem"} color={"red"} />
-                  <span className={styles.line}></span>
+                  <section className={styles.line}>
+                    <span className={styles.main_line}></span>
+                  </section>
                   <span>our video</span>
                 </p>
               </section>
@@ -25,20 +27,20 @@ const Banner = () => {
                     Rapid.Repatable.Readi <sup className={styles.small}>TM</sup>
                   </h1>
                 </li>
-                <li className={styles.red_title}>
+                <li className={`${styles.red_title} mt-4`}>
                   <h1>Bring Real Automation</h1>
                 </li>
                 <li className={styles.heading2}>
                   <h1>Back to identity Management</h1>
                 </li>
-                <li className={styles.paragraph}>
+                <li className={`${styles.paragraph} mt-5`}>
                   <p>
                     No limits. Make the management of your people, and everthing
                     they need for success, the quickest and most reliable
                     process you have, without having to change a single thing.
                   </p>
                 </li>
-                <li className={styles.button}>
+                <li className={`${styles.button} mt-5`}>
                   <button>
                     <span>Readi for success ?</span>
                     <i></i>

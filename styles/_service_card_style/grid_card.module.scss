@@ -1,54 +1,83 @@
 @import "../function";
 
 .card_container {
-  width: 100%;
-  padding: 3rem;
+  max-width: 30rem;
+  min-height: 30rem;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 1rem;
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  }
+
+  cursor: pointer;
   color: white;
   background-color: white;
   transition: $transition;
-  @include flex(center, flex-start);
+  @include flex(space-between, flex-start);
+
   flex-direction: column;
-  li {
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 0;
+  //   top: 0;
+  //   content: "";
+  //   background-color: $main-color;
+  //   position: absolute;
+  // }
+
+  .content {
+    padding: clamp(1rem, 2vw, 2rem);
+    text-align: center;
     margin-top: 1rem;
+
+    ul {
+      li {
+        margin-top: 1rem;
+      }
+    }
   }
+
   .icons {
-    border: 0.1rem solid white;
     display: inline-flex;
-    width: 7rem;
-    height: 7rem;
+    width: 100%;
+    min-height: 8rem;
     justify-content: center;
     align-items: center;
-    border-radius: 100%;
-    img {
-      width: 3rem;
+    position: relative;
+
+    span {
+      display: inline-flex;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 100%;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      position: absolute;
+      bottom: -3rem;
+
+      img {
+        width: 6rem;
+      }
     }
   }
 
   .heading {
     h5 {
-      font-size: 2rem;
+      font-size: clamp(1.7rem, 2vw, 2rem);
+
       color: black;
-      font-weight: 600;
+      font-weight: 700;
     }
   }
 
   .paragraph {
     p {
       color: $paragraph-color;
-    }
-  }
-
-  &:hover {
-    transform: translateY(-2rem);
-
-    background-color: red;
-    p,
-    h5 {
-      color: white;
-    }
-
-    .icons {
-      background-color: white;
+      font-size: 1.6rem;
     }
   }
 }

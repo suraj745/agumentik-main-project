@@ -12,7 +12,6 @@ const Layout = ({ children }) => {
 
   const router = useRouter();
 
-  console.log(router);
   return (
     <section>
       <AnimatePresence>
@@ -23,14 +22,14 @@ const Layout = ({ children }) => {
         )}
       </AnimatePresence>
       <header>
-        {router.route === "/carrer" ? (
+        {router.route === "/careers" ? (
           ""
         ) : (
           <Navbar open={() => setOpen(!isOpen)} />
         )}
       </header>
       <main>{children}</main>
-      <footer>{router.route === "/carrer" ? "" : <Footer />}</footer>
+      <footer>{router.route === "/careers" ? "" : <Footer />}</footer>
     </section>
   );
 };

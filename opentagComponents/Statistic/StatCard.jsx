@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/OpenTagStyle/statistic/statcard.module.scss";
 import { motion } from "framer-motion";
-const StatCard = ({ number, name, className }) => {
+import CountUp from "react-countup";
+
+const StatCard = ({ number, name, className, holder }) => {
+  const [view, setView] = useState(false);
+
   return (
     <section className={className}>
       <ul className={styles.stat_card}>
-        <li className={styles.heading}>
-          <h1>{number}</h1>
-        </li>
+        <motion.li
+          className={styles.heading}
+          whileInView={() => setView(true)}
+          onViewportLeave={() => {
+            setView(false);
+          }}
+        >
+          <h1>
+            <CountUp
+              separator={","}
+              start={view && 0}
+              end={number}
+              enableScrollSpy={true}
+            />
+            {holder}
+          </h1>
+        </motion.li>
         <li className={styles.paragraph}>
           <p>{name}</p>
         </li>

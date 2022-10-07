@@ -1,28 +1,41 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
+import { Autoplay } from "swiper";
 import styles from "../../styles/_slider_style/_slider.module.scss";
-import { useMediaQuery } from "react-responsive";
-// import "./styles.css";
+import Marquee from "react-fast-marquee";
+const partner = [
+  {
+    image: "/images/partnar/1.png",
+  },
+  {
+    image: "/images/partnar/2.png",
+  },
+  {
+    image: "/images/partnar/3.png",
+  },
+  {
+    image: "/images/partnar/4.png",
+  },
+  {
+    image: "/images/partnar/5.png",
+  },
 
-import { Pagination } from "swiper";
-
+  {
+    image: "/images/partnar/1.png",
+  },
+  {
+    image: "/images/partnar/2.png",
+  },
+  {
+    image: "/images/partnar/3.png",
+  },
+  {
+    image: "/images/partnar/4.png",
+  },
+  {
+    image: "/images/partnar/5.png",
+  },
+];
 const Slider = ({ sliderName }) => {
-  const mobile = useMediaQuery({
-    query: "(max-width: 360px)",
-  });
-  const partner = [
-    "/images/partnar/1.png",
-    "/images/partnar/2.png",
-    "/images/partnar/3.png",
-    "/images/partnar/4.png",
-    "/images/partnar/5.png",
-    "/images/partnar/1.png",
-    "/images/partnar/2.png",
-    "/images/partnar/3.png",
-    "/images/partnar/4.png",
-    "/images/partnar/5.png",
-  ];
   return (
     <section className="container p-5">
       <section className={styles.slider_container}>
@@ -36,39 +49,52 @@ const Slider = ({ sliderName }) => {
           </li>
         </ul>
         <section className={styles.main_slider}>
-          <Swiper
-            slidesPerView={2}
-            spaceBetween={10}
+          {/* <Swiper
+            className={styles.brand_slider}
+            loop={true}
+            autoplay={{
+              delay: 1000,
+            }}
             breakpoints={{
-              640: {
+              0: {
                 slidesPerView: 2,
                 spaceBetween: 10,
               },
+              576: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
               768: {
                 slidesPerView: 4,
-                spaceBetween: 30,
+                spaceBetween: 50,
               },
-              1024: {
-                slidesPerView: 5,
-                spaceBetween: 40,
-              },
-
-              1200: {
+              990: {
                 slidesPerView: 5,
                 spaceBetween: 50,
               },
             }}
-            modules={[Pagination]}
-            className={styles.swiper}
+            modules={[Autoplay]}
           >
-            {partner.map((value) => {
+            <Marquee>
+              {partner.map((value, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <img src={value.image} alt="" />
+                  </SwiperSlide>
+                );
+              })}
+            </Marquee>
+          </Swiper> */}
+
+          <Marquee speed={50} className={styles.grid_marquee} gradientWidth={0}>
+            {partner.map((value, index) => {
               return (
-                <SwiperSlide key={partner.length}>
-                  <img src={value} alt="slider" />
-                </SwiperSlide>
+                <section key={index} className={styles.image_wrapper}>
+                  <img src={value.image} alt="" />
+                </section>
               );
             })}
-          </Swiper>
+          </Marquee>
         </section>
       </section>
     </section>

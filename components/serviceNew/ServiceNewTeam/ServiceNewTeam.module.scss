@@ -1,0 +1,45 @@
+@import "/styles/function";
+
+.ServiceNewTeamContainer {
+  .left {
+    & > ul {
+      text-align: center;
+
+      color: rgba(0, 0, 0, 0.809);
+
+      & > :nth-child(1) {
+        h1 {
+          font-size: clamp(3rem, 4vw, 5rem);
+          font-weight: 600;
+        }
+      }
+      & > :nth-child(2) {
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .right {
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.grid_marquee {
+  .image_wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.slide {
+  @include flex(center, center);
+
+  & > img {
+    width: 100%;
+  }
+}

@@ -4,22 +4,35 @@ const WebDevleop = () => {
   return (
     <section className="container">
       <section className="row content_pad align-items-center">
-        <section className="col-lg-6">
-          <img src="/images/html.svg" alt="" width={"100%"} />
+        <section data-aos="fade-right" className="col-lg-6 overflow-hidden">
+          <img
+            className={styles.web_image}
+            src="/wedevelopbanner.jpg"
+            alt=""
+            width={"100%"}
+          />
         </section>
         <section className="col-lg-6">
           <ul className={styles.right_content}>
-            <li className={styles.title}>
+            <li data-aos="fade-up" className={styles.title}>
               <h5>WEB DEVLOPMENT</h5>
             </li>
-            <li className={styles.heading}>
+            <li
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className={styles.heading}
+            >
               <h1>How We Are Different in Website Development</h1>
             </li>
             <li className={styles.design}>
               <span></span>
               <span></span>
             </li>
-            <li className={styles.paragraph}>
+            <li
+              data-aos="fade-up"
+              data-aos-delay="400"
+              className={styles.paragraph}
+            >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis

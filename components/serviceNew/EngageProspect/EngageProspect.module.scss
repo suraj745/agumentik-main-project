@@ -1,0 +1,46 @@
+@import "/styles/function";
+
+.prospect_container {
+  .left {
+    & > img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .right {
+    & > li {
+      margin-top: 2rem;
+    }
+    & > :nth-child(1) h1 {
+      font-size: clamp(3rem, 4vw, 5rem);
+      color: rgba(0, 0, 0, 0.809);
+      font-weight: 600;
+    }
+
+    & > :nth-child(2) p {
+      width: 80%;
+      font-size: clamp(1.6rem, 4vw, 1.8rem);
+    }
+
+    & > :nth-child(3) {
+      button {
+        background: none;
+        border: none;
+        outline: none;
+        background: $main_color;
+        padding: 1rem 2rem;
+        border-radius: 4rem;
+        border: 0.2rem solid $main_color;
+        transition: 0.6s;
+
+        color: white;
+
+        &:hover {
+          background-color: white;
+          color: $main_color;
+        }
+      }
+    }
+  }
+}

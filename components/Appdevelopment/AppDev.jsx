@@ -7,7 +7,7 @@ const AppDev = () => {
       {/* top */}
       <section className="row content_pad flex-column">
         <section className="col">
-          <section className="row align-items-center">
+          <section className="row justify-content-between align-items-center">
             <section className="col-lg-6">
               <ul className={styles.content}>
                 <li className={styles.top}>
@@ -45,8 +45,13 @@ const AppDev = () => {
                 </li>
               </ul>
             </section>
-            <section className="col-lg-6">
-              <img src="/images/laptop.jpg" alt="" width={"100%"} />
+            <section className="col-lg-5">
+              <img
+                className={styles.img}
+                src="/digitalmarketing.jpg"
+                alt=""
+                width={"100%"}
+              />
             </section>
           </section>
         </section>
@@ -56,6 +61,7 @@ const AppDev = () => {
           <section
             className="row
           flex-row-reverse align-items-center
+          justify-content-between
 "
           >
             <section className="col-lg-6">
@@ -95,8 +101,13 @@ const AppDev = () => {
                 </li>
               </ul>
             </section>
-            <section className="col-lg-6">
-              <img src="/images/working.jpg" alt="" width={"100%"} />
+            <section className="col-lg-5">
+              <img
+                className={styles.img}
+                src="/digitalmarketing2.jpg"
+                alt=""
+                width={"100%"}
+              />
             </section>
           </section>
         </section>

@@ -8,17 +8,29 @@ const Testinomial = () => {
       <section className="row flex-lg-row flex-column">
         <section className="col-lg-4 d-flex justify-content-center align-items-center">
           <ul className={styles.left_content}>
-            <li className={styles.title}>
+            <li data-aos="fade-up" className={styles.title}>
               <h5>TESTIMONIAL</h5>
             </li>
-            <li className={styles.heading}>
+            <li
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className={styles.heading}
+            >
               <h1>What Our Client Say</h1>
             </li>
-            <li className={styles.design}>
+            <li
+              className={styles.design}
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <span></span>
               <span></span>
             </li>
-            <li className={styles.paragraph}>
+            <li
+              data-aos="fade-up"
+              data-aos-delay="600"
+              className={styles.paragraph}
+            >
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis

@@ -1,8 +1,8 @@
 @import "../function";
 
 .mobnav_container {
-  padding: 2rem;
   display: none;
+
   @include media("<=tablet") {
     display: block;
   }
@@ -14,36 +14,87 @@
   z-index: 2000;
   left: 0;
   top: 8rem;
-  overflow-y: scroll;
   color: $black-color;
 
-  a:hover {
-    color: red;
-    cursor: pointer;
+  .head {
+    height: 100%;
+    font-size: clamp(1.7rem, 4vw, 1.8rem);
+    width: 10rem;
+    @include flex(space-between, center);
   }
 
-  .sub_menu {
-    border: 0.1rem solid rgba(192, 192, 192, 0.603);
-    li {
-      margin-top: 1.5rem;
-      padding: 0rem 0rem 0rem 1rem;
-    }
+  .head2 {
+    height: 100%;
+    font-size: clamp(1.7rem, 4vw, 1.8rem);
+    width: 85%;
+    @include flex(space-between, center);
   }
 
-  .home,
-  .about_menu,
-  .service_menu,
-  .portfolio,
-  .info_menu,
-  .support_menu {
-    margin-top: 1rem;
-
-    // li {
-    //   a {
-    //     &:hover {
-    //       color: red;
-    //     }
-    //   }
-    // }
+  .head3 {
+    height: 100%;
+    font-size: clamp(1.7rem, 4vw, 1.8rem);
+    width: 85%;
+    @include flex(space-between, center);
   }
+  // .sub_menu {
+  //   transition: max-height 0.6s;
+  //   max-height: 0rem;
+  //   overflow: hidden;
+  //   li {
+  //     margin-top: 1.5rem;
+  //   }
+  // }
+
+  // .home,
+  // .about_menu,
+  // .service_menu,
+  // .portfolio,
+  // .info_menu,
+  // .support_menu {
+  //   margin-top: 1rem;
+
+  //   & a > .arrow {
+  //     transition: 0.2s;
+  //   }
+  //   &:hover a > .arrow {
+  //     transform: rotate(90deg);
+  //   }
+  //   & > a {
+  //     display: inline-flex;
+  //     align-items: center;
+  //     justify-content: space-between;
+  //     gap: 0.5rem;
+  //     width: 9rem;
+  //   }
+  // li {
+  //   a {
+  //     &:hover {
+  //       color: red;
+  //     }
+  //   }
+  // }
 }
+
+// .mob_submenu {
+//   transition: 0.4s;
+
+//   max-height: 0rem;
+
+//   overflow: hidden;
+
+//   & > li {
+//     margin-top: 0rem;
+//   }
+// }
+
+// .sub_menu_container {
+//   position: relative;
+
+//   &:hover .mob_submenu {
+//     max-height: 100vh;
+//   }
+
+//   & .mob_submenu {
+//     position: relative;
+//   }
+// }

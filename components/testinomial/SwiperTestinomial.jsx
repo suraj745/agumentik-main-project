@@ -1,15 +1,9 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-// import required modules
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import SwipeCard from "./SwipeCard";
 import styles from "../../styles/testinomial/_swipertest.module.scss";
-
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 export default function SwiperTestinomial() {
   const details = [
     {
@@ -49,14 +43,12 @@ export default function SwiperTestinomial() {
   return (
     <section className={styles.swiper_container}>
       <Swiper
-        // slidesPerView={mobile ? 1 : 2}
-        // spaceBetween={mobile ? 20 : 30}
-        // slidesPerGroup={mobile ? 2 : 1}
-        loop={true}
-        loopFillGroupWithBlank={true}
         pagination={{
           clickable: true,
         }}
+        modules={[Pagination, Autoplay]}
+        loop={true}
+        freeMode={true}
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -69,12 +61,15 @@ export default function SwiperTestinomial() {
             slidesPerGroup: 2,
           },
         }}
-        modules={[Pagination]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         className={styles.swiper}
       >
-        {details.map((value) => {
+        {details.map((value, index) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={index} className={styles.swiper_inner}>
               <SwipeCard
                 img={value.image}
                 name={value.name}

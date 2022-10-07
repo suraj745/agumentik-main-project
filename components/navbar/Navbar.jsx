@@ -20,12 +20,12 @@ const About = [
   },
   {
     link: "/carrer",
-    name: "Carrers",
+    name: "Career",
   },
 ];
 const Service = [
   {
-    link: "/service",
+    link: "/services",
     name: " Web Development",
   },
   {
@@ -123,9 +123,9 @@ const Navbar = ({ open }) => {
 
         <Dropdown
           menuName={"AboutUs"}
-          name={About.map((value) => {
+          name={About.map((value, index) => {
             return (
-              <Link href={value.link} passHref key={About.length}>
+              <Link href={value.link} passHref key={index}>
                 <li>{value.name}</li>
               </Link>
             );
@@ -133,9 +133,9 @@ const Navbar = ({ open }) => {
         />
         <Dropdown
           menuName={"Services"}
-          name={Service.map((value) => {
+          name={Service.map((value, index) => {
             return (
-              <Link href={value.link} passHref key={Service.length}>
+              <Link href={value.link} passHref key={index}>
                 <li>{value.name}</li>
               </Link>
             );
@@ -144,9 +144,9 @@ const Navbar = ({ open }) => {
         <a>Portfolio </a>
         <Dropdown
           menuName={"Info"}
-          name={Info.map((value) => {
+          name={Info.map((value, index) => {
             return (
-              <Link href={value.link} passHref key={Info.length}>
+              <Link href={value.link} passHref key={index}>
                 <li>{value.name}</li>
               </Link>
             );
@@ -154,9 +154,9 @@ const Navbar = ({ open }) => {
         />
         <Dropdown
           menuName={"Support"}
-          name={Support.map((value) => {
+          name={Support.map((value, index) => {
             return (
-              <Link href={value.link} passHref key={Support.length}>
+              <Link href={value.link} passHref key={index}>
                 <li>{value.name}</li>
               </Link>
             );

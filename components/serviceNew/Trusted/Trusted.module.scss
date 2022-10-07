@@ -1,0 +1,69 @@
+@import "/styles/function";
+
+.trusted_container {
+  .top {
+    color: rgba(0, 0, 0, 0.809);
+
+    li {
+      margin-top: 2rem;
+    }
+    & > :nth-child(1) h1 {
+      font-size: clamp(3rem, 4vw, 5rem);
+      text-align: center;
+    }
+
+    & > :nth-child(2) p {
+      font-size: clamp(1.6rem, 4vw, 1.8rem);
+      text-align: center;
+    }
+  }
+}
+
+.carousel_slide {
+  min-height: 20rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+}
+.carousel_card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 100%;
+  min-height: 30vh;
+  padding: 2rem;
+
+  .carousel_dp {
+    @include flex(flex-start, center);
+    gap: 2rem;
+    img {
+      width: 8rem;
+      height: 8rem;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+
+    .profile_content {
+      & > :nth-child(1) h3 {
+        font-weight: 600;
+        font-size: 2rem;
+        color: rgba(0, 0, 0, 0.809);
+      }
+
+      & > :nth-child(2) p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.content {
+  margin-top: 2rem;
+  p {
+    font-size: clamp(1.6rem, 4vw, 1.8rem);
+  }
+}
+
+.carousel {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}

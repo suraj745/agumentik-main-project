@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "../../styles/TVR styles/Design/design_card.module.scss";
-const DesignCard = ({ icon, number, title }) => {
+const DesignCard = ({ icon, number, title, id }) => {
   return (
-    <ul className={styles.design_Card}>
+    <ul
+      data-aos="fade-up"
+      data-aos-delay={`${id * 200}`}
+      className={styles.design_Card}
+    >
       <li className={styles.design_icon}>{icon}</li>
       <li className={styles.number}>
         <h1>{number}</h1>

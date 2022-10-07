@@ -34,12 +34,16 @@ const Desing = () => {
             <section className="row flex-column">
               <section className="col">
                 <ul className={styles.design_top}>
-                  <li className={styles.heading}>
+                  <li data-aos="fade-up" className={styles.heading}>
                     <h1>
                       Passionatley <span>designed</span> for you
                     </h1>
                   </li>
-                  <li className={styles.paragraph}>
+                  <li
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    className={styles.paragraph}
+                  >
                     <p>
                       A true VR system is a large scale, motion capture,
                       multiplayer, 4D system combined with enabled <br />
@@ -48,12 +52,13 @@ const Desing = () => {
                   </li>
                 </ul>
               </section>
-              <section className="col ">
+              <section className="col">
                 <section className={styles.game_grid}>
-                  {game.map((value) => {
+                  {game.map((value, index) => {
                     return (
                       <DesignCard
-                        key={game.length}
+                        id={index}
+                        key={index}
                         title={value.title}
                         icon={value.icon}
                         number={value.number}
@@ -66,14 +71,14 @@ const Desing = () => {
           </section>
           <section className="col">
             <section className="row align-items-center flex-md-row flex-column-reverse">
-              <section className="col-md-6">
+              <section data-aos="fade-right" className="col-md-6">
                 <section className={styles.design_left}>
                   <img src="/tvr-images/redboy.png" alt="" />
                 </section>
               </section>
               <section className="col-md-6 d-flex justify-content-end">
                 <ul className={styles.design_right}>
-                  <li className={styles.heading}>
+                  <li data-aos="fade-up" className={styles.heading}>
                     <h1>
                       Let's hold the <span className={styles.bold}>future</span>
                       <br />
@@ -82,7 +87,11 @@ const Desing = () => {
                     </h1>
                   </li>
                   <li className={styles.paragraph}></li>
-                  <li className={styles.contact_button}>
+                  <li
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    className={styles.contact_button}
+                  >
                     <button>Contact Us</button>
                   </li>
                 </ul>

@@ -3,12 +3,9 @@ import styles from "../../styles/loading/Loading.module.scss";
 class Loader extends Component {
   render() {
     return (
-      <div className={styles.preloader}>
-        <div className={styles.loader}>
-          <div className={styles.shadow}></div>
-          <div className={styles.box}></div>
-        </div>
-      </div>
+      <section className={`${styles.container}`}>
+        <div className={styles.loader}>Agumentik</div>
+      </section>
     );
   }
 }

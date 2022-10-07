@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "../../../styles/AboutUs/comp/explorecard.module.scss";
-const ExploreCard = ({ image, heading, paragraph }) => {
+import { motion } from "framer-motion";
+const ExploreCard = ({ image, heading, paragraph, id }) => {
   return (
-    <ul className={styles.explore_card}>
+    <ul
+      data-aos="fade-up"
+      data-aos-delay={`${id * 300}`}
+      className={styles.explore_card}
+    >
       <li className={styles.image}>
         <img src={image} alt="" />
       </li>
@@ -14,7 +19,7 @@ const ExploreCard = ({ image, heading, paragraph }) => {
           <li className={styles.paragraph}>
             <p>{paragraph}</p>
           </li>
-          <li className={styles.default_button}>
+          <li className={`${styles.default_button} mt-5`}>
             <button className={styles.default}>Know More</button>
           </li>
         </ul>

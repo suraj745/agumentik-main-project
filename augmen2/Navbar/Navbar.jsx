@@ -2,190 +2,52 @@ import React from "react";
 import styles from "../../styles/Agumen2/_navbar/_navbar.module.scss";
 import Dropdown from "../Dropdown/Dropdown";
 import Link from "next/link";
+import { IoIosArrowDown } from "react-icons/io";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from "react";
 import Hamburger from "hamburger-react";
 import Drawer from "../Drawer/Drawer";
 import MobMenu from "../../components/mobilemenu/MobMenu";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
+import { navbarData } from "./NavbarData";
+const searchData = [
+  {
+    name: "blogs",
+    link: "/blogs",
+  },
+  {
+    name: "portfolio",
+    link: "/portfolio",
+  },
+];
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const [search, setSearch] = useState(false);
 
-  const About = [
-    {
-      link: "/about-us",
-      name: "About Company",
-    },
-    {
-      link: "/gallery",
-      name: "Gallery",
-    },
-    {
-      link: "/our-products",
-      name: "Products",
-    },
-    {
-      link: "/carrer",
-      name: "Carrers",
-    },
-  ];
-  const Service = [
-    {
-      link: "/service",
-      name: " Web Development",
-      submenu: [
-        {
-          link: "#",
-          name: "Static Website",
-        },
-        {
-          link: "#",
-          name: "Dynamic Website",
-        },
-        {
-          link: "#",
-          name: "Landing Website",
-        },
-      ],
-    },
+  const [value, setValue] = useState("");
 
-    {
-      link: "/single-service",
-      name: "Ecommerce Development",
-      submenu: [
-        {
-          link: "#",
-          name: "Single Vendor",
-        },
-        {
-          link: "#",
-          name: "Multi Vendor",
-        },
-      ],
-    },
-    // {
-    //   link: "/single-service",
-    //   name: " Single Vendor",
-    //   submenu: [],
-    // },
-
-    // {
-    //   link: "/Load",
-    //   name: "Multivendor",
-    //   submenu: [],
-    // },
-    {
-      link: "/single-service",
-      name: "  Mobile App Development",
-      submenu: [
-        {
-          link: "#",
-          name: "Android App Devlopment",
-        },
-        {
-          link: "#",
-          name: "IOS App Development",
-        },
-        {
-          link: "#",
-          name: "Cross Platform Development",
-        },
-      ],
-    },
-    {
-      link: "/single-service",
-      name: "Software Development",
-      submenu: [
-        {
-          link: "#",
-          name: "Customised Software",
-        },
-        {
-          link: "#",
-          name: "ERP Software",
-        },
-        {
-          link: "#",
-          name: "Sass Software",
-        },
-      ],
-    },
-    {
-      link: "/single-service",
-      name: "UI/UX Designing",
-      submenu: [
-        {
-          link: "#",
-          name: "Graphic Designing",
-        },
-        {
-          link: "#",
-          name: "UI/UX Designing",
-        },
-      ],
-    },
-    {
-      link: "#",
-      name: "Emerging Technologies",
-      submenu: [
-        {
-          link: "/ai",
-          name: "Artificial Intelligence",
-        },
-        {
-          link: "/ai",
-          name: "Machine Learning",
-        },
-        {
-          link: "/ar",
-          name: "AR & VR",
-        },
-      ],
-    },
-  ];
-
-  const Info = [
-    {
-      link: "/blog",
-      name: "Blogs",
-    },
-    {
-      link: "/404",
-      name: "Media & Events",
-    },
-
-    {
-      link: "",
-      name: "CSR",
-    },
-  ];
-  const Support = [
-    {
-      link: "#",
-      name: "Verify Employee",
-    },
-    {
-      link: "#",
-      name: "Verify Certificate",
-    },
-    {
-      link: "/project",
-      name: "Project Status",
-    },
-    {
-      link: "#",
-      name: "Grievance Board",
-    },
-
-    {
-      link: "/contact",
-      name: "Contact",
-    },
-  ];
-
+  const [sticky, setSticky] = useState(false);
   const [OpenDrawer, setOpenDrawer] = useState(false);
+
+  useEffect(() => {
+    const stickyNavbar = () => {
+      window.scrollY > 40 ? setSticky(true) : setSticky(false);
+    };
+
+    window.addEventListener("scroll", stickyNavbar);
+
+    window.addEventListener("click", () => {
+      setSearch(false);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", stickyNavbar);
+    };
+  }, []);
+
   return (
-    <section className={styles.nav_container}>
+    <section className={`${styles.nav_container} ${sticky && `stickynavbar`}`}>
       <section className="container">
         <section className="row justify-content-between ">
           <section className="col-6 col-md-2 d-flex justify-content-md-center">
@@ -196,80 +58,119 @@ const Navbar = () => {
             </section>
           </section>
           <section className="col-md-8 d-none d-md-block">
-            <ul className={styles.nav_menu}>
-              <Link href={"/"} passHref>
-                <li>Home</li>
-              </Link>
+            <ul className={styles.menu_container}>
+              {navbarData.map((value, index) => {
+                return (
+                  <Link key={index} href={value.link} passHref>
+                    <li className={styles.menu}>
+                      <a>
+                        {value.name}
+                        {value.dropdown && (
+                          <IoIosArrowDown className={styles.menu_arrow} />
+                        )}
+                      </a>
 
-              <li>
-                <Dropdown
-                  MenuName={"About"}
-                  us={"Us"}
-                  MenuList={About.map((value) => {
-                    return (
-                      <Link href={value.link} key={About.length}>
-                        <li>{value.name}</li>
-                      </Link>
-                    );
-                  })}
-                />
-              </li>
-              <li>
-                <Dropdown
-                  MenuName={"Service"}
-                  MenuList={Service.map((value) => {
-                    return (
-                      <Link href={value.link} key={Service.length}>
-                        <li className="service_list">
-                          {value.name}
-                          <ul className="sub_dropdown">
-                            {value.submenu.map((sub) => {
-                              return (
-                                <Link href={sub.link}>
-                                  <li>{sub.name}</li>
-                                </Link>
-                              );
-                            })}
-                          </ul>
-                        </li>
-                      </Link>
-                    );
-                  })}
-                />
-              </li>
-              <Link href={"/portfolio"} passHref>
-                <li>Portfolio</li>
-              </Link>
-              <li>
-                <Dropdown
-                  MenuName={"Info"}
-                  MenuList={Info.map((value) => {
-                    return (
-                      <Link href={value.link} key={Info.length}>
-                        <li>{value.name}</li>
-                      </Link>
-                    );
-                  })}
-                />
-              </li>
-              <li>
-                <Dropdown
-                  MenuName={"Support"}
-                  MenuList={Support.map((value) => {
-                    return (
-                      <Link href={value.link} key={Support.length}>
-                        <li>{value.name}</li>
-                      </Link>
-                    );
-                  })}
-                />
-              </li>
+                      {value.dropdown && (
+                        <ul className={styles.dropdown}>
+                          {value.dropdown.map((value, index) => {
+                            return (
+                              <Link key={index} href={value.link} passHref>
+                                <li className={styles.submenu_container}>
+                                  <div>
+                                    {value.name}
+
+                                    {value.submenu && (
+                                      <IoIosArrowDown
+                                        className={styles.dropdown_arrow}
+                                      />
+                                    )}
+                                  </div>
+
+                                  <section
+                                    className={styles.submenu_outer_container}
+                                  >
+                                    {value.submenu && (
+                                      <ul className={styles.submenu}>
+                                        {value.submenu.map((value, index) => {
+                                          return (
+                                            <Link
+                                              href={value.link}
+                                              key={index}
+                                              passHref
+                                            >
+                                              <li>
+                                                <a>{value.name}</a>
+                                              </li>
+                                            </Link>
+                                          );
+                                        })}
+                                      </ul>
+                                    )}
+                                  </section>
+                                </li>
+                              </Link>
+                            );
+                          })}
+                        </ul>
+                      )}
+                    </li>
+                  </Link>
+                );
+              })}
             </ul>
           </section>
           <section className="col-6 col-md-2  d-flex justify-content-end align-items-center">
             <section className={styles.hamburger}>
-              <AiOutlineSearch fontSize={"3rem"} />
+              <section
+                className={styles.search}
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <AiOutlineSearch
+                  fontSize={"3rem"}
+                  onClick={(e) => {
+                    setSearch(!search);
+                    e.stopPropagation();
+                  }}
+                />
 
+                {search && (
+                  <section className={styles.input}>
+                    <input
+                      value={value}
+                      onChange={(e) => setValue(e.target.value)}
+                      type="search"
+                      placeholder="Search "
+                    />
+                    {value.length > 0 && (
+                      <ul className={styles.searchedlist}>
+                        {searchData
+                          .filter((filt) => {
+                            if (value === "") {
+                              return;
+                            } else if (
+                              filt.name
+                                .toLocaleLowerCase()
+                                .includes(value.toLowerCase())
+                            ) {
+                              return filt;
+                            }
+                          })
+                          .map((sear, index) => {
+                            return (
+                              <Link key={index} href={sear.link}>
+                                <li style={{ cursor: "pointer" }}>
+                                  {sear.name}
+                                </li>
+                              </Link>
+                            );
+                          })}
+                      </ul>
+                    )}
+                  </section>
+                )}
+              </section>
               <section
                 className={styles.animated}
                 onClick={() => setOpenDrawer(!OpenDrawer)}
@@ -297,15 +198,7 @@ const Navbar = () => {
           <Drawer closeDrawer={() => setOpenDrawer(!OpenDrawer)} />
         )}
       </AnimatePresence>
-      {isOpen && (
-        <MobMenu
-          about={About}
-          service={Service}
-          info={Info}
-          support={Support}
-          close={() => setOpen(!isOpen)}
-        />
-      )}
+      {isOpen && <MobMenu close={() => setOpen(!isOpen)} />}
     </section>
   );
 };

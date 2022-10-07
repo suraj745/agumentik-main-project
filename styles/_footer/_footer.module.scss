@@ -1,14 +1,19 @@
 @import "../function";
 
 .footer_container {
-  background-image: url("/images/footer-bg.jpg");
+  // background-image: url("/images/footer-bg.jpg");
   background-repeat: no-repeat;
+  background-color: hwb(0 15% 85%);
   background-size: cover;
   @include flex(center, center);
   padding: 1rem;
 
   ul {
     list-style: none;
+    & li a,
+    p {
+      color: white !important;
+    }
   }
 
   .footer_content {
@@ -46,7 +51,8 @@
       }
 
       .heading {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.304);
+        border-bottom: 1px solid $main-color;
+
         h1 {
           font-size: 2rem;
           font-weight: 600;
@@ -79,6 +85,7 @@
           transition: $transition;
           margin-left: 0.5rem;
           display: inline-flex;
+
           border: 1px solid white;
           width: 3rem;
           height: 3rem;
@@ -94,5 +101,76 @@
         }
       }
     }
+  }
+}
+
+.footer_contact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $main-color !important;
+  }
+
+  & > :nth-child(1) {
+    font-size: 2.5rem;
+  }
+
+  & > :nth-child(2) {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+.dropdown_container {
+  position: relative;
+
+  &:hover .dropdown {
+    max-height: 10rem;
+  }
+}
+
+.details {
+  & p {
+    width: 100%;
+    margin: 0;
+    padding-block: 0.2rem;
+  }
+  margin-top: 2rem;
+}
+
+.details > p {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  & > :nth-child(1) {
+    font-size: 2rem;
+  }
+}
+
+.heart {
+  color: red;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  10% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes pulsecolor {
+  10% {
+    background: #dd0000;
+  }
+}
+
+.heading {
+  & > h1 {
+    color: $main-color !important;
   }
 }

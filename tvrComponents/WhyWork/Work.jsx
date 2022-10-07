@@ -39,10 +39,14 @@ const Work = () => {
         <section className="row content_pad flex-column ">
           <section className="col">
             <ul className={styles.top_content}>
-              <li className={styles.heading}>
+              <li data-aos="fade-up" className={styles.heading}>
                 <h1>Why work with us</h1>
               </li>
-              <li className={styles.paragraph}>
+              <li
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className={styles.paragraph}
+              >
                 <p>
                   A ture VR system is a large scale, motion capture,multiplayer,
                   4D <br /> system combined with enabled physical objects, force
@@ -53,10 +57,11 @@ const Work = () => {
           </section>
           <section className="col mt-5">
             <section className={styles.work_grid}>
-              {cardDetail.map((value) => {
+              {cardDetail.map((value, index) => {
                 return (
                   <WorkCard
-                    key={cardDetail.length}
+                    id={index}
+                    key={index}
                     icons={value.icons}
                     heading={value.heading}
                     paragraph={value.paragraph}
